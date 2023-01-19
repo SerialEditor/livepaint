@@ -1,0 +1,124 @@
+@import url("../components/slider/slider.css");
+
+.preview-modes {
+    margin-bottom: 15px;
+}
+
+.preview-modes__list {
+    display: flex;
+    justify-content: space-between;
+    width: 210px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.preview-modes__item:last-child {
+    margin-left: auto; /*Управляем пока что только показом слайдами, остальные варианты - потом*/
+}
+
+.preview-modes__link {
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 36px;
+    background-color: #34495e;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+    transition: .25s;
+}
+
+.preview-modes__link:hover {
+    border-color: #ffffff;
+}
+
+.preview-modes__link::before, .preview-modes__link::after {
+    content: "";
+    position: absolute;
+    transition: .25s;
+}
+
+.tile--set::before, .tile--set::after {
+    top: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 2px;
+    box-shadow: 0 16px 0 0 rgba(255, 255, 255, 0.75);
+}
+
+.tile--set::before {
+    left: 16px;
+    transform: translate(-6px, -8px);
+}
+
+.tile--set::after {
+    left: 32px;
+    transform: translate(-6px, -8px);
+}
+
+.tile--set:hover::before, .tile--set:hover::after {
+    background-color: #ffffff;
+    box-shadow: 0 16px 0 0 #ffffff;
+}
+
+.slider--set::before, .slider--set::after {
+    top: 50%;
+    left: 50%;
+    border: 8px solid rgba(255, 255, 255, 0.75);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.slider--set::before {
+    transform: translate(-100%, -50%) rotate(-45deg);
+}
+
+.slider--set::after {
+    transform: translate(0, -50%) rotate(135deg);
+}
+
+.slider--set:hover::before, .slider--set:hover::after {
+    border-left-color: #ffffff;
+    border-top-color: #ffffff;
+}
+
+.preview__list {
+    display: flex;
+    padding: 20px;
+    background-color: #ffe4c4;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.preview__list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.preview__item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 0 5px -2px #000000;
+}
+
+.preview__item:last-child {
+    margin-right: 0;
+}
+
+.preview__image {
+    flex-shrink: 0;
+    box-shadow: 2px 2px 3px 0 #000000;
+}
+
+@media  screen and (min-width: 767px) {
+    .preview-modes__list {
+        width: 260px;
+    }
+}

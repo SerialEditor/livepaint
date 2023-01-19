@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>livepaint: творческая галерея - рисунки акварелью, гуашью, карандашом</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+</head>
+
+<body class="page__body">
+    <header class="main-header">
+        <nav class="navigation">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" width="90" height="90" alt="Логотип моей страницы">
+            </a>
+            <div class="navigation__list--wrapper">
+                <input type="checkbox" id="navigation__list--toggler" class="visually-hidden">
+                <label for="navigation__list--toggler" class="toggler-label">
+                    <span class="visually-hidden">Главное меню</span>
+                </label>
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a href="index.html" class="navigation__link">Обо мне</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link current">Галерея</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link">Блог</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <button type="button" class="navigation__list--toggler">
+            <span class="visually-hidden">Главное меню</span>
+        </button>
+    </header>
+    <main>
+        <h1 class="visually-hidden">Мои картины</h1>
+        <section class="preview">
+            <h2 class="visually-hidden">Галерея превью</h2>
+            <section class="preview-modes">
+                <h3 class="visually-hidden">Режимы просмотра картин галереи</h3>
+                <ul class="preview-modes__list">
+                    <li class="preview-modes__item">
+                        <a class="preview-modes__link tile--set">
+                            <span class="visually-hidden">Отобразить карточками</span>
+                        </a>
+                    </li>
+                    <li class="preview-modes__item">
+                        <a class="preview-modes__link slider--set" href="index.html">
+                            <span class="visually-hidden">Отобразить слайдами</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <ul class="preview__list">
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Цветущий_луг.jpg" width="120" height="160"
+                        alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Мечтатель.jpg" width="120" height="160" alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Найденный_покой.jpg" width="120" height="85"
+                        alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Незнакомка.jpg" width="120" height="160"
+                        alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Скепсис.jpg" width="120" height="172" alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Урожай.jpg" width="120" height="160" alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Фарфор.jpg" width="120" height="166" alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/На_правом_берегу.jpg" width="120" height="84"
+                        alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Заря.jpg" width="120" height="90" alt="Image">
+                </li>
+            </ul>
+        </section>
+        <div class="slider-mask" hidden></div>
+        <div class="slider" hidden>
+            <figure class="slider__viewier-window">
+                <div class="slider__image-container">
+                    <img class="slider__image" src="files/slides/Цветущий_луг.jpg" width="500" alt="Image">
+                    <button class="slider--close" type="button">
+                        <span class="visually-hidden">Закрыть</span>
+                    </button>
+                </div>
+            </figure>
+            <div class="slider__button-bar">
+                <button class="slider__button button--back button--disabled" type="button">
+                    <span class="visually-hidden">Вперед</span>
+                </button>
+                <button class="slider__button button--forward" type="button">
+                    <span class="visually-hidden">Назад</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer class="main-footer"></footer>
+    <script src="components/header/navigation-list-toggler.js"></script>
+    <script src="components/slider/slider.js"></script>
+</body>
+
+</html>
