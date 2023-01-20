@@ -13,7 +13,7 @@
 }
 
 .preview-modes__item:last-child {
-    margin-left: auto; /*Управляем пока что только показом слайдами, остальные варианты - потом*/
+    margin-left: auto;
 }
 
 .preview-modes__link {
@@ -22,15 +22,40 @@
     width: 48px;
     height: 36px;
     background-color: #34495e;
-    border: 2px solid rgba(255, 255, 255, 0.75);
+    border: 2px solid #ffffff;
     border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.tile--set {
+    background-image: url(../img/icons/tile-set-btn-bg.svg);
+}
+
+.slider--set {
+    background-image: url(../img/icons/slider-set-btn-bg.svg);
+}
+
+.preview-modes__link::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    background-color: rgba(52, 73, 94, 0.3);
     transition: .25s;
 }
 
-.preview-modes__link:hover {
+/* .preview-modes__link:hover {
     border-color: #ffffff;
+} */
+
+.preview-modes__link:hover::before {
+    background-color: transparent;
 }
 
+/*
 .preview-modes__link::before, .preview-modes__link::after {
     content: "";
     position: absolute;
@@ -80,7 +105,7 @@
 .slider--set:hover::before, .slider--set:hover::after {
     border-left-color: #ffffff;
     border-top-color: #ffffff;
-}
+} */
 
 .preview__list {
     display: flex;
