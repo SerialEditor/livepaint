@@ -25,6 +25,7 @@
     display: block;
     padding: 10px 20px;
     font-size: 20px;
+    text-align: center;
     color: #ffffff;
     text-transform: uppercase;
 }
@@ -90,13 +91,8 @@
     .navigation__list {
         position: relative;
         z-index: 1;
-        text-align: center;
         align-items: center;
         transition: transform .4s ease;
-    }
-
-    .navigation__link {
-        width: 100px;
     }
 }
 
