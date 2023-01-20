@@ -2,7 +2,7 @@
 //Обращение к <html> производится пока что здесь:
 let rootElement = document.documentElement;
 
-let sliderOpen = document.querySelector('.slider--set');
+let sliderOpenButton = document.querySelector('.slider--set');
 let sliderMask = document.querySelector('.slider-mask');
 
 let previewList = document.querySelector('.preview__list');
@@ -41,7 +41,7 @@ function closeSlider () {
     slideCounter = 0;
 }
 
-sliderOpen.addEventListener('click', function (evt) {
+sliderOpenButton.addEventListener('click', function (evt) {
     evt.preventDefault();
     sliderMask.removeAttribute('hidden');
     slider.removeAttribute('hidden');
