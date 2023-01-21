@@ -49,29 +49,12 @@
     width: 36px;
     height: 36px;
     background-color: rgba(153, 153, 153, 0.3);
+    background-image: url("../../img/icons/slider-close-btn-bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     transition: .25s;
-}
-
-.slider--close::before,
-.slider--close::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 30px;
-    height: 2px;
-    background-color: #ffffff;
-    transition: .25s;
-}
-
-.slider--close::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.slider--close::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .slider--close:hover {
@@ -97,13 +80,21 @@
     height: 36px;
     border: 2px solid #ffffff;
     border-radius: 50%;
-    background-color: rgba(139, 0, 139, 0.7);
+    background-color: rgba(139, 0, 139, 0.5);
+    background-repeat: no-repeat;
     transition: .25s;
     transform: scale(1);
 }
 
+.button--back {
+    background-image: url("../../img/icons/slider-btn-back-bg.svg");
+    background-position: 10px 50%;
+}
+
 .button--forward {
     margin-left: auto;
+    background-image: url("../../img/icons/slider-btn-forward-bg.svg");
+    background-position: 13px 50%;
 }
 
 .slider__button:hover {
@@ -114,35 +105,6 @@
     transform: scale(0.9);
 }
 
-.slider__button::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 35%;
-    height: 35%;
-    border-left: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    transform-origin: 0 100%;
-    transition: .25s;
-}
-
-.button--back::before {
-    transform: translate(-50%, -100%) rotate(45deg) scale(1);
-}
-
-.button--forward::before {
-    transform: translate(50%, -100%) rotate(225deg) scale(1);
-}
-
-.button--back:active::before {
-    transform: translate(-50%, -100%) rotate(45deg) scale(0.9);
-}
-
-.button--forward:active::before {
-    transform: translate(50%, -100%) rotate(225deg) scale(0.9);
-}
-
 .button--disabled,
 .button--disabled:hover {
     background-color: rgba(209, 142, 209, 0.5);
@@ -150,14 +112,6 @@
 
 .button--disabled:active {
     transform: scale(1);
-}
-
-.button--back.button--disabled:active::before {
-    transform: translate(-50%, -100%) rotate(45deg) scale(1);
-}
-
-.button--forward.button--disabled:active::before {
-    transform: translate(50%, -100%) rotate(225deg) scale(1);
 }
 
 @media screen and (min-width: 480px) {

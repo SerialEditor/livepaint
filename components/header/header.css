@@ -57,7 +57,7 @@
     height: 2px;
     background-color: #ffffff;
     transform: translate(-50%, -50%);
-    transition: all .4s ease;
+    transition: transform .4s ease;
 }
 
 .navigation__list--toggler::before {
