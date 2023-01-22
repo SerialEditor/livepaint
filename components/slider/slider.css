@@ -17,7 +17,7 @@
     left: 50%;
     box-sizing: border-box;
     width: 100vmin;
-    max-width: 640px; 
+    max-width: 640px;
     padding: 0 20px;
     transform: translate(-50%, -50%);
 }
@@ -49,12 +49,29 @@
     width: 36px;
     height: 36px;
     background-color: rgba(153, 153, 153, 0.3);
-    background-image: url("../../img/icons/slider-close-btn-bg.svg");
-    background-repeat: no-repeat;
-    background-position: center;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     transition: .25s;
+}
+
+.slider--close::before,
+.slider--close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: .25s;
+}
+
+.slider--close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.slider--close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .slider--close:hover {
@@ -156,4 +173,3 @@
         margin-right: 0;
     }
 }
-
