@@ -29,8 +29,6 @@
     align-items: center;
     height: 125vmin;
     margin-bottom: 10px;
-    opacity: 1;
-    transition: .25s;
 }
 
 .full-transparency {

@@ -5,12 +5,12 @@ let rootElement = document.documentElement;
 let sliderOpenButton = document.querySelector('.slider--set');
 let sliderMask = document.querySelector('.slider-mask');
 
-let previewList = document.querySelector('.preview__list');
-let previews = previewList.querySelectorAll('.preview__image');
-let previewSources = [...previews].map(function(preview) {
+let previewList = document.querySelector('.preview__list'); //import
+let previews = previewList.querySelectorAll('.preview__image'); //import
+let previewSources = [...previews].map(function (preview) {
     return preview.src;
-});
-let slideSources = previewSources.map(function(previewSource) {
+});                                                            //import
+let slideSources = previewSources.map(function (previewSource) {
     let slideSource = previewSource.replace('previews', 'slides');
     return slideSource;
 });
@@ -27,7 +27,7 @@ let slideCounter = 0;
 buttonBack.disabled = true;
 
 //Open/close slider
-function closeSlider () {
+function closeSlider() {
     sliderMask.setAttribute('hidden', true);
     slider.setAttribute('hidden', true);
     rootElement.classList.remove('slider-mask--overflow-hidden');
@@ -52,24 +52,26 @@ sliderClose.addEventListener('click', function () {
     closeSlider();
 });
 
-document.addEventListener('keydown', function (e) {
-    if (e.code === 'Escape') {
+document.addEventListener('keydown', function (evt) {
+    if (evt.code === 'Escape') {
         closeSlider();
     }
 })
 
 //Change slides
-function changeSlide (elem, src) {
+function changeSlide(elem, src) {
     sliderWindow.classList.add('full-transparency');
-    setTimeout(() => {elem.src = src}, 250);
-    setTimeout(() => {sliderWindow.classList.remove('full-transparency')}, 500);
+    elem.src = src;
+    elem.onload = function () {
+        setTimeout(() => {sliderWindow.classList.remove('full-transparency')}, 250);
+    }
 }
 
-function setButtonAbility (button, boolean) {
+function setButtonAbility(button, boolean) {
     button.disabled = boolean;
     if (boolean) {
         button.classList.add('button--disabled');
-    } else {button.classList.remove('button--disabled');}
+    } else { button.classList.remove('button--disabled'); }
 }
 
 buttonBack.addEventListener('click', function () {
