@@ -41,21 +41,43 @@
         <h1 class="visually-hidden">Мои картины</h1>
         <section class="preview">
             <h2 class="visually-hidden">Галерея превью</h2>
-            <section class="preview-modes">
-                <h3 class="visually-hidden">Режимы просмотра картин галереи</h3>
-                <ul class="preview-modes__list">
-                    <li class="preview-modes__item">
-                        <button class="preview-modes__button layout--set" type="button">
-                            <span class="layout-mode visually-hidden">Отобразить карточками</span>
-                        </button>
-                    </li>
-                    <li class="preview-modes__item">
-                        <button class="preview-modes__button slider--set" type="button">
-                            <span class="visually-hidden">Отобразить слайдами</span>
-                        </button>
-                    </li>
-                </ul>
-            </section>
+            <div class="preview-toolbar-container">
+                <section class="filter">
+                    <h3 class="visually-hidden">Фильтр</h3>
+                    <details class="filter-hallmarks">
+                        <summary>Все картины</summary>
+                        <ul class="filter-hallmarks__list">
+                            <li class="filter-hallmarks__item">
+                                <button class="hallmark current-hallmark" type="button">Все картины</button>
+                            </li>
+                            <li class="filter-hallmarks__item">
+                                <button class="hallmark" type="button">Пейзажи</button>
+                            </li>
+                            <li class="filter-hallmarks__item">
+                                <button class="hallmark" type="button">Натюрморты</button>
+                            </li>
+                            <li class="filter-hallmarks__item">
+                                <button class="hallmark" type="button">Портреты</button>
+                            </li>
+                        </ul>
+                    </details>
+                </section>
+                <section class="preview-modes">
+                    <h3 class="visually-hidden">Режимы просмотра картин галереи</h3>
+                    <ul class="preview-modes__list">
+                        <li class="preview-modes__item">
+                            <button class="preview-modes__button layout--set" type="button">
+                                <span class="layout-mode visually-hidden">Ряд</span>
+                            </button>
+                        </li>
+                        <li class="preview-modes__item">
+                            <button class="preview-modes__button slider--set" type="button">
+                                <span class="visually-hidden">Показать слайдами</span>
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+            </div>
             <ul class="preview__list">
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Цветущий_луг.jpg" width="120" height="160"
@@ -69,36 +91,44 @@
                         alt="Image">
                 </li>
                 <li class="preview__item">
-                    <img class="preview__image" src="files/previews/Незнакомка.jpg" loading="lazy" width="120" height="160"
+                    <img class="preview__image" src="files/previews/Незнакомка.jpg" loading="lazy" width="120"
+                        height="160" alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Свеча.jpg" loading="lazy" width="120" height="128"
                         alt="Image">
                 </li>
                 <li class="preview__item">
-                    <img class="preview__image" src="files/previews/Свеча.jpg" loading="lazy" width="120" height="128" alt="Image">
-                </li>
-                <li class="preview__item">
-                    <img class="preview__image" src="files/previews/Скепсис.jpg" loading="lazy" width="120" height="172" alt="Image">
-                </li>
-                <li class="preview__item">
-                    <img class="preview__image" src="files/previews/Урожай.jpg" loading="lazy" width="120" height="160" alt="Image">
-                </li>
-                <li class="preview__item">
-                    <img class="preview__image" src="files/previews/Фарфор.jpg" loading="lazy" width="120" height="169" alt="Image">
-                </li>
-                <li class="preview__item">
-                    <img class="preview__image" src="files/previews/На_правом_берегу.jpg" loading="lazy" width="120" height="84"
+                    <img class="preview__image" src="files/previews/Скепсис.jpg" loading="lazy" width="120" height="172"
                         alt="Image">
                 </li>
                 <li class="preview__item">
-                    <img class="preview__image" src="files/previews/На_заре.jpg" loading="lazy" width="120" height="85" alt="Image">
+                    <img class="preview__image" src="files/previews/Урожай.jpg" loading="lazy" width="120" height="160"
+                        alt="Image">
                 </li>
                 <li class="preview__item">
-                    <img class="preview__image" src="files/previews/Бидон.jpg" loading="lazy" width="120" height="150" alt="Image">
+                    <img class="preview__image" src="files/previews/Фарфор.jpg" loading="lazy" width="120" height="169"
+                        alt="Image">
                 </li>
                 <li class="preview__item">
-                    <img class="preview__image" src="files/previews/В_небе_звезды.jpg" loading="lazy" width="120" height="84" alt="Image">
+                    <img class="preview__image" src="files/previews/На_правом_берегу.jpg" loading="lazy" width="120"
+                        height="84" alt="Image">
                 </li>
                 <li class="preview__item">
-                    <img class="preview__image" src="files/previews/Солнечный кувшин.jpg" loading="lazy" width="120" height="160" alt="Image">
+                    <img class="preview__image" src="files/previews/На_заре.jpg" loading="lazy" width="120" height="85"
+                        alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Бидон.jpg" loading="lazy" width="120" height="150"
+                        alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/В_небе_звезды.jpg" loading="lazy" width="120"
+                        height="84" alt="Image">
+                </li>
+                <li class="preview__item">
+                    <img class="preview__image" src="files/previews/Солнечный кувшин.jpg" loading="lazy" width="120"
+                        height="160" alt="Image">
                 </li>
             </ul>
         </section>
@@ -106,7 +136,8 @@
         <div class="slider" hidden>
             <figure class="slider__viewier-window">
                 <div class="slider__image-container">
-                    <img class="slider__image" src="files/slides/Цветущий_луг.jpg" loading="lazy" width="500" alt="Image">
+                    <img class="slider__image" src="files/slides/Цветущий_луг.jpg" loading="lazy" width="500"
+                        alt="Image">
                     <button class="slider--close" type="button">
                         <span class="visually-hidden">Закрыть слайдер</span>
                     </button>
