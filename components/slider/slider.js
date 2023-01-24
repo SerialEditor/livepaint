@@ -41,8 +41,7 @@ function closeSlider() {
     slideCounter = 0;
 }
 
-sliderOpenButton.addEventListener('click', function (evt) {
-    evt.preventDefault();
+sliderOpenButton.addEventListener('click', function () {
     sliderMask.removeAttribute('hidden');
     slider.removeAttribute('hidden');
     rootElement.classList.add('slider-mask--overflow-hidden');

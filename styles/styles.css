@@ -71,16 +71,23 @@ img {
     overflow: hidden;
 }
 
-.page__body {
+.page-body {
     margin: 0;
     line-height: 1.2;
     font-family: 'PT Sans', 'Helvetiсa', 'Arial', sans-serif;
     background-color: #34495e;
+    background-image: url(../img/page-bg.svg);
 }
 
-.main-header {
+.page-header {
     position: relative;
     margin-bottom: 20px;
+    background-color: #34495e;
+}
+
+.navigation {
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 10px;
 }
 
@@ -159,6 +166,11 @@ img {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.page-main {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 767px) {
     .navigation__list--wrapper {
         position: absolute;
@@ -205,6 +217,7 @@ img {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        padding-left: 20px;
     }
 
     .navigation__list--wrapper {

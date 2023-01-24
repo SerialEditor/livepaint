@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="styles/gallery.css">
 </head>
 
-<body class="page__body">
-    <header class="main-header">
+<body class="page-body">
+    <header class="page-header">
         <nav class="navigation">
             <a href="index.html" class="logo">
                 <img src="img/logo.png" width="90" height="90" alt="Логотип моей страницы">
@@ -37,7 +37,7 @@
             <span class="visually-hidden">Главное меню</span>
         </button>
     </header>
-    <main>
+    <main class="page-main main-gallery">
         <h1 class="visually-hidden">Мои картины</h1>
         <section class="preview">
             <h2 class="visually-hidden">Галерея превью</h2>
@@ -45,14 +45,14 @@
                 <h3 class="visually-hidden">Режимы просмотра картин галереи</h3>
                 <ul class="preview-modes__list">
                     <li class="preview-modes__item">
-                        <a class="preview-modes__link tile--set">
-                            <span class="visually-hidden">Отобразить карточками</span>
-                        </a>
+                        <button class="preview-modes__button layout--set" type="button">
+                            <span class="layout-mode visually-hidden">Отобразить карточками</span>
+                        </button>
                     </li>
                     <li class="preview-modes__item">
-                        <a class="preview-modes__link slider--set" href="index.html">
+                        <button class="preview-modes__button slider--set" type="button">
                             <span class="visually-hidden">Отобразить слайдами</span>
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </section>
@@ -122,9 +122,9 @@
             </div>
         </div>
     </main>
-    <footer class="main-footer"></footer>
+    <footer class="page-footer"></footer>
     <script src="scripts/navigation-list-toggler.js"></script>
-    <script src="scripts/tile-layout-toggler.js"></script>
+    <script src="scripts/layout-mode-toggler.js"></script>
     <script src="components/slider/slider.js"></script>
 </body>
 
