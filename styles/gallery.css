@@ -14,7 +14,7 @@
     width: 120px;
 }
 
-.filter-hallmarks, .hallmark {
+.filter-categories, .preview-category-button {
     font-family: inherit;
     font-size: 1.6rem;
     line-height: 1.5;
@@ -22,11 +22,11 @@
     text-transform: uppercase;
 }
 
-.filter-hallmarks {
+.filter-categories {
     position: relative;
 }
 
-.filter-hallmarks__list {
+.filter-categories__list {
     position: absolute;
     z-index: 1;
     top: calc(100% + 15px);
@@ -41,12 +41,12 @@
     border-radius: 5px;
 }
 
-.filter-hallmarks__item {
+.filter-categories__item {
     flex-grow: 1;
     text-align: center;
 }
 
-.hallmark {
+.preview-category-button {
     padding: 5px 10px;
     background-color: transparent;
     border-radius: 5px;
@@ -158,6 +158,10 @@
     grid-row: auto;
     -ms-grid-column-align: center;
     justify-self: center;
+}
+
+.preview__item.full-hidden {
+    display: none;
 }
 
 .preview__image {

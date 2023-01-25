@@ -44,20 +44,23 @@
             <div class="preview-toolbar-container">
                 <section class="filter">
                     <h3 class="visually-hidden">Фильтр</h3>
-                    <details class="filter-hallmarks">
-                        <summary>Все картины</summary>
-                        <ul class="filter-hallmarks__list">
-                            <li class="filter-hallmarks__item">
-                                <button class="hallmark current-hallmark" type="button">Все картины</button>
+                    <details class="filter-categories">
+                        <summary class="current-category">Все картины</summary>
+                        <ul class="filter-categories__list">
+                            <li class="filter-categories__item">
+                                <button class="preview-category-button" type="button" data-category="all">Все картины</button>
                             </li>
-                            <li class="filter-hallmarks__item">
-                                <button class="hallmark" type="button">Пейзажи</button>
+                            <li class="filter-categories__item">
+                                <button class="preview-category-button" type="button" data-category="landscape">Пейзажи</button>
                             </li>
-                            <li class="filter-hallmarks__item">
-                                <button class="hallmark" type="button">Натюрморты</button>
+                            <li class="filter-categories__item">
+                                <button class="preview-category-button" type="button" data-category="still-life">Натюрморты</button>
                             </li>
-                            <li class="filter-hallmarks__item">
-                                <button class="hallmark" type="button">Портреты</button>
+                            <li class="filter-categories__item">
+                                <button class="preview-category-button" type="button" data-category="portrait">Портреты</button>
+                            </li>
+                            <li class="filter-categories__item">
+                                <button class="preview-category-button" type="button" data-category="composition">Композиции</button>
                             </li>
                         </ul>
                     </details>
@@ -81,54 +84,54 @@
             <ul class="preview__list">
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Цветущий_луг.jpg" width="120" height="160"
-                        alt="Image">
+                        alt="Image" data-category="landscape">
                 </li>
                 <li class="preview__item">
-                    <img class="preview__image" src="files/previews/Мечтатель.jpg" width="120" height="160" alt="Image">
+                    <img class="preview__image" src="files/previews/Мечтатель.jpg" width="120" height="160" alt="Image" data-category="portrait">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Найденный_покой.jpg" width="120" height="85"
-                        alt="Image">
+                        alt="Image" data-category="landscape">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Незнакомка.jpg" loading="lazy" width="120"
-                        height="160" alt="Image">
+                        height="160" alt="Image" data-category="portrait">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Свеча.jpg" loading="lazy" width="120" height="128"
-                        alt="Image">
+                        alt="Image" data-category="composition">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Скепсис.jpg" loading="lazy" width="120" height="172"
-                        alt="Image">
+                        alt="Image" data-category="portrait">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Урожай.jpg" loading="lazy" width="120" height="160"
-                        alt="Image">
+                        alt="Image" data-category="still-life">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Фарфор.jpg" loading="lazy" width="120" height="169"
-                        alt="Image">
+                        alt="Image" data-category="still-life">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/На_правом_берегу.jpg" loading="lazy" width="120"
-                        height="84" alt="Image">
+                        height="84" alt="Image" data-category="landscape">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/На_заре.jpg" loading="lazy" width="120" height="85"
-                        alt="Image">
+                        alt="Image" data-category="landscape">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Бидон.jpg" loading="lazy" width="120" height="150"
-                        alt="Image">
+                        alt="Image" data-category="still-life">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/В_небе_звезды.jpg" loading="lazy" width="120"
-                        height="84" alt="Image">
+                        height="84" alt="Image" data-category="composition">
                 </li>
                 <li class="preview__item">
                     <img class="preview__image" src="files/previews/Солнечный кувшин.jpg" loading="lazy" width="120"
-                        height="160" alt="Image">
+                        height="160" alt="Image" data-category="still-life">
                 </li>
             </ul>
         </section>
@@ -136,7 +139,7 @@
         <div class="slider" hidden>
             <figure class="slider__viewier-window">
                 <div class="slider__image-container">
-                    <img class="slider__image" src="files/slides/Цветущий_луг.jpg" loading="lazy" width="500"
+                    <img class="slider__image" src="files/slides/Цветущий_луг.jpg" width="500"
                         alt="Image">
                     <button class="slider--close" type="button">
                         <span class="visually-hidden">Закрыть слайдер</span>
@@ -155,6 +158,8 @@
     </main>
     <footer class="page-footer"></footer>
     <script src="scripts/navigation-list-toggler.js"></script>
+    <script src="scripts/sources.js"></script>
+    <script src="scripts/filter.js"></script>
     <script src="scripts/layout-mode-toggler.js"></script>
     <script src="components/slider/slider.js"></script>
 </body>
