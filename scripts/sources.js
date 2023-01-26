@@ -2,28 +2,26 @@
 
 let rootElement = document.documentElement;
 
-let previewList = document.querySelector('.preview__list'); 
-let previews = previewList.querySelectorAll('.preview__image'); 
+let previewList = document.querySelector('.preview__list');
+let previews = previewList.querySelectorAll('.preview__image');
+let sliderImage = document.querySelector('.slider__image');
 
-function getAvailablePreviewsArray(previews) {
-    let availablePreviewsArray = [];
-    previews.forEach(function (preview) {
-        if (!preview.parentElement.classList.contains('full-hidden')) {
-            availablePreviewsArray.push(preview);
-        }
-    });
-    return availablePreviewsArray;
+function getInitSlideSource(initSlide) {
+    let splitSliderImageSource = initSlide.attributes.src.textContent.split('/');
+    let conjointSliderImageWay = splitSliderImageSource.slice([0], [splitSliderImageSource.length - 1]).join('/');
+    return conjointSliderImageWay;
 }
 
-function getAvailableSlideSources(previews) {
-    let previewSources = getAvailablePreviewsArray(previews).map(function (preview) {
-        return preview.src;
-    });                                                            
-    let availableSlideSources = previewSources.map(function (previewSource) {
-        let slideSource = previewSource.replace('previews', 'slides');
-        return slideSource;
+function getSlideInitSources(initSlideSource) {
+    let initSlideSources = [...previews].map(function (preview) {
+        let splitPreviewSource = preview.attributes.src.textContent.split('/');
+        let previewName = splitPreviewSource[splitPreviewSource.length - 1];
+        return initSlideSource + '/' + previewName;
     });
-    return availableSlideSources;
+    return initSlideSources;
 }
 
-let slideSources = getAvailableSlideSources([...previews]);
+const initSlideSource = getInitSlideSource(sliderImage);
+let slideSources = getSlideInitSources(initSlideSource);
+
+

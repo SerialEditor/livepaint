@@ -4,18 +4,15 @@ let sliderOpenButton = document.querySelector('.slider--set');
 let sliderMask = document.querySelector('.slider-mask');
 let slider = document.querySelector('.slider');
 let sliderWindow = slider.querySelector('.slider__viewier-window');
-export let sliderImage = slider.querySelector('.slider__image');
 let buttonBack = slider.querySelector('.button--back');
 let buttonForward = slider.querySelector('.button--forward');
 let sliderClose = slider.querySelector('.slider--close');
-
 let slideCounter = 0;
 
 buttonBack.disabled = true;
 
 //Open/close slider
 sliderOpenButton.addEventListener('click', function () { 
-    // sliderImage.src = slideSources[0];
     sliderMask.removeAttribute('hidden');
     slider.removeAttribute('hidden');
     rootElement.classList.add('slider-mask--overflow-hidden');
