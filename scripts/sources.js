@@ -27,11 +27,3 @@ function getAvailableSlideSources(previews) {
 }
 
 let slideSources = getAvailableSlideSources([...previews]);
-
-// let previewSources = getAvailablePreviewsArray([...previews]).map(function (preview) {
-//     return preview.src;
-// });                                                            //import
-// let slideSources = previewSources.map(function (previewSource) {
-//     let slideSource = previewSource.replace('previews', 'slides');
-//     return slideSource;
-// });

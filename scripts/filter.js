@@ -1,5 +1,7 @@
 'use strict';
 
+import { sliderImage } from "../components/slider/slider";
+
 let filterCategories = document.querySelector('.filter-categories');
 let currentCategory = filterCategories.querySelector('.current-category');
 let categoryButtons = filterCategories.querySelectorAll('.preview-category-button');
