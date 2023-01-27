@@ -7,7 +7,7 @@ let categoryButtons = filterCategories.querySelectorAll('.preview-category-butto
 function getAvailablePreviewsArray(previews) {
     let availablePreviewsArray = [];
     previews.forEach(function (preview) {
-        if (!preview.parentElement.classList.contains('full-hidden')) {
+        if (!preview.parentElement.classList.contains('full--hidden')) {
             availablePreviewsArray.push(preview);
         }
     });
@@ -30,8 +30,8 @@ for (let categoryButton of categoryButtons) {
         currentCategory.textContent = categoryButton.textContent;
         for (let preview of previews) {
             if (preview.dataset.category !== categoryButton.dataset.category && categoryButton.dataset.category !== 'all') {
-                preview.parentElement.classList.add('full-hidden');
-            } else {preview.parentElement.classList.remove('full-hidden');}
+                preview.parentElement.classList.add('full--hidden');
+            } else {preview.parentElement.classList.remove('full--hidden');}
         }
         slideSources = getAvailableSlideSources([...previews]);
         sliderImage.src = slideSources[0];

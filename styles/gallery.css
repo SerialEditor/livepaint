@@ -56,8 +56,6 @@
 }
 
 .preview-modes__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 }
 
@@ -122,12 +120,10 @@
 
 .preview__list {
     position: relative;
-    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 140px);
-    -webkit-column-gap: 20px;
-    -moz-column-gap: 20px;
-    column-gap: 20px;
+    grid-template-columns: repeat(auto-fit, 120px);
+    align-items: center;
+    column-gap: 40px;
     padding: 20px;
     background-color: #faebd7;
     overflow: scroll;
@@ -142,39 +138,84 @@
 }
 
 .preview__list--tile-layout {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     column-gap: 10px;
     row-gap: 20px;
     padding: 15px;
 }
 
 .preview__item {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
+    position: relative;
     grid-row: 1 / 2;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+    flex-direction: column;
     align-items: center;
     width: 120px;
 }
 
 .preview__list--tile-layout .preview__item {
     grid-row: auto;
-    -ms-grid-column-align: center;
     justify-self: center;
 }
 
-.preview__item.full-hidden {
+.preview__item.full--hidden {
     display: none;
 }
 
 .preview__image {
-    -ms-flex-negative: 0;
     flex-shrink: 0;
     box-shadow: 0 0 6px -2px #000000;
+}
+
+.preview__user-actions-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    background-color: rgba(11, 67, 122, 0.6);
+}
+
+.preview__user-actions-menu.full--hidden {
+    display: none;
+}
+
+.preview__link {
+    width: 36px;
+    height: 36px;
+    margin: 5px auto;
+}
+
+.enlarged-image {
+    background-image: url("../img/icons/enlarged-img-link-bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.preview__user-actions-menu-toggler {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 48px;
+    height: 24px;
+    background-color: rgba(11, 67, 122, 0.6);
+    background-image: url("../img/icons/preview-menu-btn-bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    border-radius: 24px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+.preview__item:hover .preview__user-actions-menu-toggler {
+    opacity: 1;
+}
+
+.preview__user-actions-menu-toggler.fixed {
+    opacity: 1;
 }
 
 @media screen and (min-width: 700px) {

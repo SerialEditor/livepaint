@@ -10,11 +10,12 @@ layoutSetButton.addEventListener('click', function () {
         setTimeout(function () {
             layoutSetButton.setAttribute('style', '--set-before-opacity: 0; --set-after-opacity: 1;');
         }, 250);
-        layoutModeText.textContent = 'Плитка';
+        layoutModeText.textContent = 'Выстроить в ряд';
     } else {
         layoutSetButton.setAttribute('style', '--set-before-opacity: 0; --set-after-opacity: 0;');
         setTimeout(function () {
             layoutSetButton.setAttribute('style', '--set-after-opacity: 0; --set-before-opacity: 1');
         }, 250);
+        layoutModeText.textContent = 'Выстроить колонками';
     }
 });
