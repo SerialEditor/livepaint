@@ -33,7 +33,7 @@
     margin-bottom: 10px;
 }
 
-.full-transparency {
+.slider__viewier-window.full--transparent {
     opacity: 0;
 }
 
@@ -89,6 +89,10 @@
 
 .slider__button-bar {
     display: flex;
+}
+
+.slider__button-bar.full--hidden {
+    display: none;
 }
 
 .slider__button {

@@ -83,7 +83,7 @@ summary {
     line-height: 1.2;
     font-family: 'PT Sans', 'Helvetiсa', 'Arial', sans-serif;
     background-color: #34495e;
-    background-image: url(../img/page-bg.svg);
+    background-image: url("../img/page-bg.svg");
 }
 
 .page-header {
