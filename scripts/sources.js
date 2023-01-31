@@ -3,6 +3,7 @@
 let rootElement = document.documentElement;
 
 let previewList = document.querySelector('.preview__list');
+let previewItems = previewList.querySelectorAll('.preview__item');
 let previews = previewList.querySelectorAll('.preview__image');
 let sliderImage = document.querySelector('.slider__image');
 

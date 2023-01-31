@@ -2,32 +2,33 @@
 
 let userActions = previewList.querySelectorAll('.preview__user-actions-menu');
 let enlargedImageLinks = previewList.querySelectorAll('.enlarged-image');
-let userActionsToggler = previewList.querySelectorAll('.preview__user-actions-menu-toggler');
+let userActionsTogglers = previewList.querySelectorAll('.preview__user-actions-menu-toggler');
 let activeUserActionsToggler = null;
 let activeUserActions = null;
+let touchedPreviewItem = null;
 
-function  resetActiveNode () {
+function  resetActiveNodes () {
         if (!activeUserActions.classList.contains('full--hidden')) {
             activeUserActions.classList.add('full--hidden');
         }
-        if (activeUserActionsToggler.classList.contains('fixed')) {
-            activeUserActionsToggler.classList.remove('fixed');
+        if (activeUserActionsToggler.classList.contains('visualised')) {
+            activeUserActionsToggler.classList.remove('visualised');
         }
         activeUserActions = null;
         activeUserActionsToggler = null;
 }
 
 for (let i = 0; i < userActions.length; i++) {
-    userActionsToggler[i].addEventListener('click', function () {
-        if (activeUserActionsToggler && activeUserActionsToggler !== userActionsToggler[i]) {
-            resetActiveNode();
+    userActionsTogglers[i].addEventListener('click', function () {
+        if (activeUserActionsToggler && activeUserActionsToggler !== userActionsTogglers[i]) {
+            resetActiveNodes();
         }
-        if (activeUserActionsToggler !== userActionsToggler[i]) {
-            activeUserActionsToggler = userActionsToggler[i];
+        if (!activeUserActionsToggler) {
+            activeUserActionsToggler = userActionsTogglers[i];
             activeUserActions = userActions[i];
         }
         userActions[i].classList.toggle('full--hidden');
-        userActionsToggler[i].classList.toggle('fixed');
+        userActionsTogglers[i].classList.toggle('visualised');
     });
     enlargedImageLinks[i].addEventListener('click', function (evt) {
         evt.preventDefault();
@@ -37,8 +38,30 @@ for (let i = 0; i < userActions.length; i++) {
     });
 }
 
+for (let i = 0; i < previewItems.length; i++) {
+    previewItems[i].addEventListener('touchstart', function () {
+        if (!touchedPreviewItem) {
+            touchedPreviewItem = previewItems[i];
+        }
+        if (touchedPreviewItem && touchedPreviewItem !== previewItems[i]) {
+            touchedPreviewItem.classList.remove('touch--visualised');
+            touchedPreviewItem = previewItems[i];
+        }
+        if (!touchedPreviewItem.classList.contains('touch--visualised')) {
+            touchedPreviewItem.classList.add('touch--visualised');
+        }
+    });
+}
+
 document.addEventListener('click', function (evt) {
-    if (activeUserActionsToggler && evt.target !== activeUserActionsToggler && evt.target !== activeUserActions) {
-        resetActiveNode();
+    if (activeUserActionsToggler && !evt.target.closest('.preview__user-actions-menu-toggler') && !evt.target.closest('.preview__user-actions-menu')) {
+        resetActiveNodes();
+    }
+});
+
+document.addEventListener('touchstart', function (evt) {
+    if (touchedPreviewItem && !evt.target.closest('.preview__item')) {
+        touchedPreviewItem.classList.remove('touch--visualised');
+        touchedPreviewItem = null;
     } 
 });
