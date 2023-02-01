@@ -4,8 +4,8 @@ let layoutSetButton = document.querySelector('.layout--set');
 let layoutModeText = layoutSetButton.querySelector('.layout-mode');
 
 layoutSetButton.addEventListener('click', function () {
-    previewList.classList.toggle('preview__list--tile-layout');
-    if (previewList.classList.contains('preview__list--tile-layout')) {
+    previewList.classList.toggle('column--layout');
+    if (previewList.classList.contains('column--layout')) {
         layoutSetButton.setAttribute('style', '--set-before-opacity: 0; --set-after-opacity: 0;');
         setTimeout(function () {
             layoutSetButton.setAttribute('style', '--set-before-opacity: 0; --set-after-opacity: 1;');

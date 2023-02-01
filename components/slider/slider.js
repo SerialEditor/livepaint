@@ -17,13 +17,13 @@ buttonBack.disabled = true;
 function openSlider() {
     sliderMask.removeAttribute('hidden');
     slider.removeAttribute('hidden');
-    rootElement.classList.add('slider-mask--overflow-hidden');
+    rootElement.classList.add('overflow--hidden');
 }
 
 function closeSlider() {
     sliderMask.setAttribute('hidden', true);
     slider.setAttribute('hidden', true);
-    rootElement.classList.remove('slider-mask--overflow-hidden');
+    rootElement.classList.remove('overflow--hidden');
     sliderImage.src = slideSources[0];
     if (sliderButtonBar.classList.contains('full--hidden')) {
         sliderButtonBar.classList.remove('full--hidden');

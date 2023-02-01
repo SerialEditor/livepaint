@@ -1,6 +1,6 @@
 @import url("../components/slider/slider.css");
 
-.preview-toolbar-container {
+.preview__toolbar-container {
     display: flex;
     justify-content: space-around;
     max-width: 600px;
@@ -14,16 +14,16 @@
     width: 120px;
 }
 
-.filter-categories summary, .preview-category-button {
+.filter-categories {
+    position: relative;
+}
+
+.filter-categories summary, .filter-category-button {
     font-family: inherit;
     font-size: 1.6rem;
     line-height: 1.5;
     color: #ffffff;
     text-transform: uppercase;
-}
-
-.filter-categories {
-    position: relative;
 }
 
 .filter-categories__list {
@@ -44,26 +44,26 @@
     margin-bottom: 10px;
 }
 
-.preview-category-button {
+.filter-category-button {
     display: block;
     padding: 5px 10px;
     background-color: transparent;
 }
 
-.preview-modes {
+.preview-settings {
     width: 50%;
     max-width: 250px;
 }
 
-.preview-modes__list {
+.preview-settings__list {
     display: flex;
 }
 
-.preview-modes__item:last-child {
+.preview-settings__item:last-child {
     margin-left: auto;
 }
 
-.preview-modes__button {
+.preview-settings__button {
     position: relative;
     display: block;
     width: 48px;
@@ -74,7 +74,7 @@
     transition: .25s;
 }
 
-.preview-modes__button:focus {
+.preview-settings__button:focus {
     background-color: #8b008b;
     box-shadow: 0 0 3px -1px #000000;
 }
@@ -139,7 +139,7 @@
     height: 0;
 }
 
-.preview__list--tile-layout {
+.column--layout {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     column-gap: 10px;
     row-gap: 20px;
@@ -155,7 +155,7 @@
     width: 120px;
 }
 
-.preview__list--tile-layout .preview__item {
+.column--layout .preview__item {
     grid-row: auto;
     justify-self: center;
 }
@@ -204,7 +204,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .preview-modes__button:hover {
+    .preview-settings__button:hover {
         background-color: #8b008b;
     }
 

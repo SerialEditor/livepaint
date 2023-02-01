@@ -2,7 +2,7 @@
 
 let filterCategories = document.querySelector('.filter-categories');
 let currentCategory = filterCategories.querySelector('.current-category');
-let categoryButtons = filterCategories.querySelectorAll('.preview-category-button');
+let categoryButtons = filterCategories.querySelectorAll('.filter-category-button');
 
 function getAvailablePreviewsArray(previews) {
     let availablePreviewsArray = [];
@@ -38,3 +38,9 @@ for (let categoryButton of categoryButtons) {
         filterCategories.removeAttribute('open'); 
     });
 }
+
+document.addEventListener('click', function (evt) {
+    if (!evt.target.closest('.filter-categories') && filterCategories.hasAttribute('open')) {
+        filterCategories.removeAttribute('open');
+    }
+});

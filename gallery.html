@@ -41,45 +41,45 @@
         <h1 class="visually-hidden">Мои картины</h1>
         <section class="preview">
             <h2 class="visually-hidden">Галерея превью</h2>
-            <div class="preview-toolbar-container">
+            <div class="preview__toolbar-container">
                 <section class="filter">
                     <h3 class="visually-hidden">Фильтр</h3>
                     <details class="filter-categories" tabindex="0">
                         <summary class="current-category">Все картины</summary>
                         <ul class="filter-categories__list">
                             <li class="filter-categories__item">
-                                <button class="preview-category-button" type="button" data-category="all">Все
+                                <button class="filter-category-button" type="button" data-category="all">Все
                                     картины</button>
                             </li>
                             <li class="filter-categories__item">
-                                <button class="preview-category-button" type="button"
+                                <button class="filter-category-button" type="button"
                                     data-category="landscape">Пейзажи</button>
                             </li>
                             <li class="filter-categories__item">
-                                <button class="preview-category-button" type="button"
+                                <button class="filter-category-button" type="button"
                                     data-category="still-life">Натюрморты</button>
                             </li>
                             <li class="filter-categories__item">
-                                <button class="preview-category-button" type="button"
+                                <button class="filter-category-button" type="button"
                                     data-category="portrait">Портреты</button>
                             </li>
                             <li class="filter-categories__item">
-                                <button class="preview-category-button" type="button"
+                                <button class="filter-category-button" type="button"
                                     data-category="composition">Композиции</button>
                             </li>
                         </ul>
                     </details>
                 </section>
-                <section class="preview-modes">
+                <section class="preview-settings">
                     <h3 class="visually-hidden">Режимы просмотра картин галереи</h3>
-                    <ul class="preview-modes__list">
-                        <li class="preview-modes__item">
-                            <button class="preview-modes__button layout--set" type="button">
+                    <ul class="preview-settings__list">
+                        <li class="preview-settings__item">
+                            <button class="preview-settings__button layout--set" type="button">
                                 <span class="layout-mode visually-hidden">Выстроить колонками</span>
                             </button>
                         </li>
-                        <li class="preview-modes__item">
-                            <button class="preview-modes__button slider--set" type="button">
+                        <li class="preview-settings__item">
+                            <button class="preview-settings__button slider--set" type="button">
                                 <span class="visually-hidden">Показать слайдами</span>
                             </button>
                         </li>
@@ -201,10 +201,10 @@
         </div>
     </main>
     <footer class="page-footer"></footer>
-    <script src="scripts/navigation-list-toggler.js"></script>
+    <script src="scripts/navigation-list-toggle.js"></script>
     <script src="scripts/sources.js"></script>
     <script src="scripts/filter.js"></script>
-    <script src="scripts/layout-mode-toggler.js"></script>
+    <script src="scripts/previews-layout-setting.js"></script>
     <script src="components/slider/slider.js"></script>
     <script src="scripts/preview-user-actions.js"></script>
 </body>

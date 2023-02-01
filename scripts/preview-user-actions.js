@@ -6,9 +6,10 @@ let touchedPreviewItem = null;
 for (let button of magnifyingButtons) {
     button.addEventListener('click', function (evt) {
         evt.preventDefault();
-        sliderImage.src = button.href;
         sliderButtonBar.classList.add('full--hidden');
+        sliderImage.removeAttribute('src');
         openSlider();
+        changeSlide(sliderImage, button.href); 
     });
 }
 
