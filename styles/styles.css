@@ -63,6 +63,10 @@ img {
     height: auto;
 }
 
+details {
+    outline: none;
+}
+
 summary {
     list-style-type: none;
     outline: none;

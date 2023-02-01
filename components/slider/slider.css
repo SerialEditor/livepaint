@@ -44,13 +44,12 @@
 
 .slider--close {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 36px;
-    height: 36px;
-    background-color: rgba(153, 153, 153, 0.3);
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    top: 5px;
+    right: 5px;
+    width: 42px;
+    height: 42px;
+    background-color: rgba(106, 106, 106, 0.5);
+    border-radius: 50%;
     transition: .25s;
 }
 
@@ -74,7 +73,7 @@
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.slider--close:hover {
+.slider--close:focus {
     background-color: #8b008b;
 }
 
@@ -118,7 +117,7 @@
     background-position: 13px 50%;
 }
 
-.slider__button:hover {
+.slider__button:focus {
     background-color: #8b008b;
 }
 
@@ -127,7 +126,7 @@
 }
 
 .button--disabled,
-.button--disabled:hover {
+.button--disabled:focus {
     background-color: rgba(209, 142, 209, 0.5);
 }
 
@@ -175,5 +174,19 @@
 
     .button--forward {
         margin-right: 0;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .slider--close:hover {
+        background-color: #8b008b;
+    }
+
+    .slider__button:hover {
+        background-color: #8b008b;
+    }
+
+    .button--disabled:hover {
+        background-color: rgba(209, 142, 209, 0.5);
     }
 }
