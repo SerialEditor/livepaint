@@ -2,8 +2,8 @@
 
 let rootElement = document.documentElement;
 
-let previewList = document.querySelector('.preview__list');
-let previewItems = previewList.querySelectorAll('.preview__item');
+let previewList = document.querySelector('.preview__thumbnails-list');
+let previewItems = previewList.querySelectorAll('.preview__thumbnails-item');
 let previewMagnifyingButtons = previewList.querySelectorAll('.magnifying-button');
 
 function getSlideSources (sources) {   //Чтобы слайдер крутил только отфильтрованные категории
@@ -16,8 +16,12 @@ function getSlideSources (sources) {   //Чтобы слайдер крутил 
     return slidesArray; 
 }
 
-let slideSources = getSlideSources(previewMagnifyingButtons);
+function setButtonAbility(button, boolean) {
+    button.disabled = boolean;
+}
 
+let slideSources = getSlideSources(previewMagnifyingButtons);
+let previewListScrollWidth = previewList.scrollWidth;
 
 
 

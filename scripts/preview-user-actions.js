@@ -28,7 +28,7 @@ for (let item of previewItems) {
 }
 
 document.addEventListener('touchstart', function (evt) {
-    if (touchedPreviewItem && !evt.target.closest('.preview__item')) {
+    if (touchedPreviewItem && !evt.target.closest('.preview__thumbnails-item')) {
         touchedPreviewItem.classList.remove('touch--visualised');
         touchedPreviewItem = null;
     } 

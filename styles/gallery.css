@@ -120,7 +120,11 @@
     transition: all .25s;
 }
 
-.preview__list {
+.preview__thumbnails-container {
+    position: relative;
+}
+
+.preview__thumbnails-list {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, 120px);
@@ -134,7 +138,7 @@
     scroll-behavior: smooth;
 }
 
-.preview__list::-webkit-scrollbar {
+.preview__thumbnails-list::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
@@ -146,7 +150,7 @@
     padding: 15px;
 }
 
-.preview__item {
+.preview__thumbnails-item {
     position: relative;
     grid-row: 1 / 2;
     display: flex;
@@ -155,16 +159,16 @@
     width: 120px;
 }
 
-.column--layout .preview__item {
+.column--layout .preview__thumbnails-item {
     grid-row: auto;
     justify-self: center;
 }
 
-.preview__item.full--hidden {
+.preview__thumbnails-item.full--hidden {
     display: none;
 }
 
-.preview__image {
+.preview__thumbnail {
     flex-shrink: 0;
     box-shadow: 0 0 6px -2px #000000;
 }
@@ -191,8 +195,29 @@
     opacity: 1;
 }
 
-.preview__item.touch--visualised .magnifying-button {
+.preview__thumbnails-item.touch--visualised .magnifying-button {
     opacity: 1;
+}
+
+.thumbnails-list-scroll-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+}
+
+.thumbnails-list-scroll-button[disabled] {
+    display: none;
+}
+
+.thumbnails-scroll--forward {
+    background-image: url("../img/icons/previews-scroll-btn-bg.svg");
 }
 
 @media screen and (min-width: 700px) {
@@ -212,7 +237,7 @@
         background-color: #8b008b;
     }
 
-    .preview__item:hover .magnifying-button {
+    .preview__thumbnails-item:hover .magnifying-button {
         opacity: 1;
     }
 }

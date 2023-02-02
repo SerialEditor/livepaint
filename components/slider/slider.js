@@ -27,10 +27,6 @@ function changeSlide(elem, src) {
     }
 }
 
-function setButtonAbility(button, boolean) {
-    button.disabled = boolean;
-}
-
 function closeSlider() {
     sliderMask.setAttribute('hidden', true);
     slider.setAttribute('hidden', true);
