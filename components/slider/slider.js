@@ -4,6 +4,7 @@ let sliderOpenButton = document.querySelector('.slider--set');
 let sliderMask = document.querySelector('.slider-mask');
 let slider = document.querySelector('.slider');
 let sliderWindow = slider.querySelector('.slider__viewier-window');
+let slideTitle = slider.querySelector('.slide-title');
 let sliderButtonBar = slider.querySelector('.slider__button-bar');
 let buttonBack = slider.querySelector('.button--back');
 let buttonForward = slider.querySelector('.button--forward');
@@ -18,7 +19,8 @@ function openSlider() {
 
 function changeSlide(elem, src) {
     sliderWindow.classList.add('full--transparent');
-    elem.src = src;
+    slideTitle.textContent = src.dataset.fileTitle;
+    elem.src = src.href;
     elem.onload = function () {
         setTimeout(() => { sliderWindow.classList.remove('full--transparent') }, 250);
     }
@@ -35,8 +37,8 @@ function closeSlider() {
     sliderMask.setAttribute('hidden', true);
     slider.setAttribute('hidden', true);
     rootElement.classList.remove('overflow--hidden');
-    if (sliderImage.src !== slideSources[0]) {
-        sliderImage.src = slideSources[0];
+    if (sliderImage.src !== slideSources[0].href) {
+        sliderImage.src = slideSources[0].href;
     }
     if (sliderButtonBar.classList.contains('full--hidden')) {
         sliderButtonBar.classList.remove('full--hidden');

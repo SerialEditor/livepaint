@@ -17,7 +17,8 @@ for (let categoryButton of categoryButtons) {
             } else {item.classList.remove('full--hidden');}
         }
         slideSources = getSlideSources(previewMagnifyingButtons);
-        sliderImage.src = slideSources[0];
+        slideTitle.textContent = slideSources[0].dataset.fileTitle;
+        sliderImage.src = slideSources[0].href;
         filterCategories.removeAttribute('open'); 
     });
 }

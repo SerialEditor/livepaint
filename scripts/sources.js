@@ -11,7 +11,7 @@ function getSlideSources (sources) {   //Чтобы слайдер крутил 
     let slidesArray = [];
     sources.forEach(function (source) {
         if (!source.parentElement.classList.contains('full--hidden')) {
-            slidesArray.push(source.href);
+            slidesArray.push(source);
         }
     });
     return slidesArray; 

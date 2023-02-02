@@ -8,7 +8,7 @@ for (let button of previewMagnifyingButtons) {
         sliderButtonBar.classList.add('full--hidden');
         sliderImage.removeAttribute('src');
         openSlider();
-        changeSlide(sliderImage, button.href); 
+        changeSlide(sliderImage, button); 
     });
 }
 
