@@ -1,9 +1,8 @@
 'use strict';
 
-let magnifyingButtons = previewList.querySelectorAll('.magnifying-button');
 let touchedPreviewItem = null;
 
-for (let button of magnifyingButtons) {
+for (let button of previewMagnifyingButtons) {
     button.addEventListener('click', function (evt) {
         evt.preventDefault();
         sliderButtonBar.classList.add('full--hidden');

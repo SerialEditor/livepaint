@@ -10,54 +10,17 @@ let buttonForward = slider.querySelector('.button--forward');
 let sliderClose = slider.querySelector('.slider--close');
 let slideCounter = 0;
 
-buttonBack.disabled = true;
-
-//Open/close slider
-
 function openSlider() {
     sliderMask.removeAttribute('hidden');
     slider.removeAttribute('hidden');
     rootElement.classList.add('overflow--hidden');
 }
 
-function closeSlider() {
-    sliderMask.setAttribute('hidden', true);
-    slider.setAttribute('hidden', true);
-    rootElement.classList.remove('overflow--hidden');
-    sliderImage.src = slideSources[0];
-    if (sliderButtonBar.classList.contains('full--hidden')) {
-        sliderButtonBar.classList.remove('full--hidden');
-    }
-    if (!buttonBack.classList.contains('button--disabled')) {
-        setButtonAbility(buttonBack, true); //Line 55
-    }
-    if (buttonForward.classList.contains('button--disabled')) {
-        setButtonAbility(buttonForward, false);
-    }
-    slideCounter = 0;
-}
-
-sliderOpenButton.addEventListener('click', function () { 
-    openSlider();
-});
-
-sliderClose.addEventListener('click', function () {
-    closeSlider();
-});
-
-document.addEventListener('keydown', function (evt) {
-    if (evt.code === 'Escape') {
-        closeSlider();
-    }
-})
-
-//Change slides
-
 function changeSlide(elem, src) {
     sliderWindow.classList.add('full--transparent');
     elem.src = src;
     elem.onload = function () {
-        setTimeout(() => {sliderWindow.classList.remove('full--transparent')}, 250);
+        setTimeout(() => { sliderWindow.classList.remove('full--transparent') }, 250);
     }
 }
 
@@ -67,6 +30,31 @@ function setButtonAbility(button, boolean) {
         button.classList.add('button--disabled');
     } else { button.classList.remove('button--disabled'); }
 }
+
+function closeSlider() {
+    sliderMask.setAttribute('hidden', true);
+    slider.setAttribute('hidden', true);
+    rootElement.classList.remove('overflow--hidden');
+    if (sliderImage.src !== slideSources[0]) {
+        sliderImage.src = slideSources[0];
+    }
+    if (sliderButtonBar.classList.contains('full--hidden')) {
+        sliderButtonBar.classList.remove('full--hidden');
+    }
+    if (!buttonBack.classList.contains('button--disabled')) {
+        setButtonAbility(buttonBack, true);
+    }
+    if (buttonForward.classList.contains('button--disabled')) {
+        setButtonAbility(buttonForward, false);
+    }
+    if (slideCounter) {
+        slideCounter = 0;
+    }
+}
+
+sliderOpenButton.addEventListener('click', function () {
+    openSlider();
+});
 
 buttonBack.addEventListener('click', function () {
     if (slideCounter === (slideSources.length - 1)) {
@@ -95,3 +83,16 @@ buttonForward.addEventListener('click', function () {
         return;
     }
 });
+
+sliderClose.addEventListener('click', function () {
+    closeSlider();
+});
+
+document.addEventListener('keydown', function (evt) {
+    if (!slider.hasAttribute('hidden') && evt.code === 'Escape') {
+        closeSlider();
+    }
+});
+
+
+buttonBack.disabled = true;
