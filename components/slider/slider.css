@@ -91,13 +91,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    font-family: 'PT Sans', 'Helvetiсa', 'Arial', sans-serif;
+    font-family: inherit;
     font-size: 2rem;
     line-height: 1.5;
     font-style: italic;
+    letter-spacing: 1px;
     text-align: center;
     color: #ffffff;
-    transform: translateY(100%);
+    background-color: rgba(52, 73, 94, 0.6);
 }
 
 .slider__button-bar {
@@ -139,12 +140,11 @@
     transform: scale(0.9);
 }
 
-.button--disabled,
-.button--disabled:focus {
+.slider__button[disabled], .slider__button[disabled]:focus {
     background-color: rgba(209, 142, 209, 0.5);
 }
 
-.button--disabled:active {
+.slider__button[disabled]:active {
     transform: scale(1);
 }
 
@@ -204,7 +204,7 @@
         background-color: #8b008b;
     }
 
-    .button--disabled:hover {
+    .slider__button[disabled]:hover {
         background-color: rgba(209, 142, 209, 0.5);
     }
 }

@@ -4,6 +4,7 @@ let sliderOpenButton = document.querySelector('.slider--set');
 let sliderMask = document.querySelector('.slider-mask');
 let slider = document.querySelector('.slider');
 let sliderWindow = slider.querySelector('.slider__viewier-window');
+let sliderImage = document.querySelector('.slider__image');
 let slideTitle = slider.querySelector('.slide-title');
 let sliderButtonBar = slider.querySelector('.slider__button-bar');
 let buttonBack = slider.querySelector('.button--back');
@@ -28,9 +29,6 @@ function changeSlide(elem, src) {
 
 function setButtonAbility(button, boolean) {
     button.disabled = boolean;
-    if (boolean) {
-        button.classList.add('button--disabled');
-    } else { button.classList.remove('button--disabled'); }
 }
 
 function closeSlider() {
@@ -39,14 +37,15 @@ function closeSlider() {
     rootElement.classList.remove('overflow--hidden');
     if (sliderImage.src !== slideSources[0].href) {
         sliderImage.src = slideSources[0].href;
+        slideTitle.textContent = slideSources[0].dataset.fileTitle;
     }
     if (sliderButtonBar.classList.contains('full--hidden')) {
         sliderButtonBar.classList.remove('full--hidden');
     }
-    if (!buttonBack.classList.contains('button--disabled')) {
+    if (!buttonBack.hasAttribute('disabled')) {
         setButtonAbility(buttonBack, true);
     }
-    if (buttonForward.classList.contains('button--disabled')) {
+    if (buttonForward.hasAttribute('disabled')) {
         setButtonAbility(buttonForward, false);
     }
     if (slideCounter) {
@@ -95,6 +94,3 @@ document.addEventListener('keydown', function (evt) {
         closeSlider();
     }
 });
-
-
-buttonBack.disabled = true;
