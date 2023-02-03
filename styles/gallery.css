@@ -136,6 +136,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-behavior: smooth;
+    transition: transform 1s linear;
 }
 
 .preview__thumbnails-list::-webkit-scrollbar {
