@@ -21,7 +21,6 @@ function setButtonAbility(button, boolean) {
 }
 
 let slideSources = getSlideSources(previewMagnifyingButtons);
-let previewListScrollWidth = previewList.scrollWidth;
 
 
 

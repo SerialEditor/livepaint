@@ -16,6 +16,9 @@ for (let categoryButton of categoryButtons) {
                 item.classList.add('full--hidden');
             } else {item.classList.remove('full--hidden');}
         }
+        if (!previewList.classList.contains('column--layout')) {
+            previewScrollableState();
+        }
         slideSources = getSlideSources(previewMagnifyingButtons);
         slideTitle.textContent = slideSources[0].dataset.fileTitle;
         sliderImage.src = slideSources[0].href;
