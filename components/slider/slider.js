@@ -13,8 +13,8 @@ let sliderClose = slider.querySelector('.slider--close');
 let slideCounter = 0;
 
 function openSlider() {
-    sliderMask.removeAttribute('hidden');
-    slider.removeAttribute('hidden');
+    sliderMask.hidden = false;
+    slider.hidden = false;
     rootElement.classList.add('overflow--hidden');
 }
 
@@ -28,8 +28,8 @@ function changeSlide(elem, src) {
 }
 
 function closeSlider() {
-    sliderMask.setAttribute('hidden', true);
-    slider.setAttribute('hidden', true);
+    sliderMask.hidden = true;
+    slider.hidden = true;
     rootElement.classList.remove('overflow--hidden');
     if (sliderImage.src !== slideSources[0].href) {
         sliderImage.src = slideSources[0].href;

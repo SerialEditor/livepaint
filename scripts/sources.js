@@ -6,7 +6,7 @@ let previewList = document.querySelector('.preview__thumbnails-list');
 let previewItems = previewList.querySelectorAll('.preview__thumbnails-item');
 let previewMagnifyingButtons = previewList.querySelectorAll('.magnifying-button');
 
-function getSlideSources (sources) {   //Чтобы слайдер крутил только отфильтрованные категории
+function getSlideSources (sources) {
     let slidesArray = [];
     sources.forEach(function (source) {
         if (!source.parentElement.classList.contains('full--hidden')) {
