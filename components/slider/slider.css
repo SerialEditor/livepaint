@@ -93,10 +93,11 @@
     bottom: 0;
     font-family: inherit;
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 1.2;
     font-style: italic;
     letter-spacing: 1px;
     text-align: center;
+    padding: 3px;
     color: #ffffff;
     background-color: rgba(52, 73, 94, 0.6);
 }
@@ -117,19 +118,8 @@
     border-radius: 50%;
     background-color: rgba(139, 0, 139, 0.5);
     background-repeat: no-repeat;
-    transition: .25s;
     transform: scale(1);
-}
-
-.button--back {
-    background-image: url("../../img/icons/slider-btn-back-bg.svg");
-    background-position: 10px 50%;
-}
-
-.button--forward {
-    margin-left: auto;
-    background-image: url("../../img/icons/slider-btn-forward-bg.svg");
-    background-position: 13px 50%;
+    transition: .25s;
 }
 
 .slider__button:focus {
@@ -146,6 +136,17 @@
 
 .slider__button[disabled]:active {
     transform: scale(1);
+}
+
+.button--back {
+    background-image: url("../../img/icons/slider-btn-back-bg.svg");
+    background-position: 10px 50%;
+}
+
+.button--forward {
+    margin-left: auto;
+    background-image: url("../../img/icons/slider-btn-forward-bg.svg");
+    background-position: 13px 50%;
 }
 
 @media screen and (min-width: 480px) {
@@ -192,6 +193,12 @@
 
     .button--forward {
         margin-right: 0;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .slide-title {
+        font-size: 1.8rem;
     }
 }
 

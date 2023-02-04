@@ -131,12 +131,12 @@
     align-items: center;
     column-gap: 40px;
     padding: 20px;
+    padding-bottom: 70px;
     background-color: #faebd7;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    transition: transform 1s linear;
 }
 
 .preview__thumbnails-list::-webkit-scrollbar {
@@ -202,28 +202,39 @@
 
 .thumbnails-scroll-button {
     position: absolute;
-    top: 50%;
-    right: 10px;
+    top: 100%;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: rgba(52, 73, 94, 0.3);
     background-repeat: no-repeat;
-    background-position: 2px center;
     background-size: 70%;
-    transform: translateY(-50%);
+    transform: translateY(-60px) scale(1);
+    transition: .25s;
 }
 
 .thumbnails-scroll-button:focus {
-    background-color: rgba(52, 73, 94, 0.5);
+    background-color: rgba(52, 73, 94, 0.7);
 }
 
-.thumbnails-scroll-button[disabled] {
-    display: none;
+.thumbnails-scroll-button:active {
+    transform: translateY(-60px) scale(0.9);
 }
+
+/* .thumbnails-scroll-button[disabled] {
+    display: none;
+} */
 
 .thumbnails-scroll--forward {
-    background-image: url("../img/icons/preview-btn-forward-bg.svg");
+    right: 10px;
+    background-image: url("../img/icons/thumbnails-btn-forward-bg.svg");
+    background-position: 2px center;
+}
+
+.thumbnails-scroll--back {
+    left: 10px;
+    background-image: url("../img/icons/thumbnails-btn-back-bg.svg");
+    background-position: 10px center;
 }
 
 @media screen and (min-width: 700px) {
