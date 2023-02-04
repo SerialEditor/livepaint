@@ -12,11 +12,15 @@ function getPreviewScrollabilitySetter() {
     };
 }
 
-function getScrollNormalizer () {
-    let previewClientWidth = previewList.clientWidth;
-    let scrollWidthNorm = (Math.trunc(previewClientWidth / 160)) * 160;
+function getScrollNormalizer (target) {
+    let scrollabilityWidth = target.scrollWidth;
+    let targetClientWidth = target.clientWidth;
+    let scrollWidthNorm = (Math.trunc(targetClientWidth / 160)) * 160;
     return function () {
-        previewList.scrollBy(scrollWidthNorm, 0);
+        target.scrollBy(scrollWidthNorm, 0);
+        currentScrollWidth += scrollWidthNorm;
+        console.log(currentScrollWidth);
+        console.log(target.scrollWidth - currentScrollWidth);
     };
 }
 
@@ -26,12 +30,12 @@ scrollForwardButton.addEventListener('click', function () {
 
 window.addEventListener('resize', function () {
     setPreviewScrollability = getPreviewScrollabilitySetter();
-    scrollPreviewList = getScrollNormalizer();
+    scrollPreviewList = getScrollNormalizer(previewList);
     if (!previewList.classList.contains('column--layout')) {
         setPreviewScrollability();
     }
 });
 
 let setPreviewScrollability = getPreviewScrollabilitySetter();
-let scrollPreviewList = getScrollNormalizer();
+let scrollPreviewList = getScrollNormalizer(previewList);
 
