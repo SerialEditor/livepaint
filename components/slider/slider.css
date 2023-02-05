@@ -83,7 +83,7 @@
 }
 
 .slider--close:focus {
-    background-color: #8b008b;
+    background-color: rgba(139, 0, 139, 0.3);
 }
 
 .slide-title {
@@ -204,7 +204,7 @@
 
 @media (hover: hover) and (pointer: fine) {
     .slider--close:hover {
-        background-color: #8b008b;
+        background-color: rgba(139, 0, 139, 0.3);
     }
 
     .slider__button:hover {
