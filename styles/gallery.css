@@ -127,16 +127,14 @@
 .preview__thumbnails-list {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 120px);
+    grid-template-columns: repeat(auto-fit, 160px);
     align-items: center;
-    column-gap: 40px;
-    padding: 20px;
-    padding-bottom: 70px;
+    padding: 20px 0;
     background-color: #faebd7;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 
 .preview__thumbnails-list::-webkit-scrollbar {
@@ -145,10 +143,8 @@
 }
 
 .column--layout {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    column-gap: 10px;
-    row-gap: 20px;
-    padding: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    padding: 10px;
 }
 
 .preview__thumbnails-item {
@@ -158,11 +154,23 @@
     flex-direction: column;
     align-items: center;
     width: 120px;
+    padding: 20px;
+}
+
+.snap--start {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.snap--end {
+    scroll-snap-align: end;
+    scroll-snap-stop: always;
 }
 
 .column--layout .preview__thumbnails-item {
     grid-row: auto;
     justify-self: center;
+    padding: 10px;
 }
 
 .preview__thumbnails-item.full--hidden {
@@ -200,43 +208,6 @@
     opacity: 1;
 }
 
-.thumbnails-scroll-button {
-    position: absolute;
-    top: 100%;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(52, 73, 94, 0.3);
-    background-repeat: no-repeat;
-    background-size: 70%;
-    transform: translateY(-60px) scale(1);
-    transition: .25s;
-}
-
-.thumbnails-scroll-button:focus {
-    background-color: rgba(52, 73, 94, 0.7);
-}
-
-.thumbnails-scroll-button:active {
-    transform: translateY(-60px) scale(0.9);
-}
-
-/* .thumbnails-scroll-button[disabled] {
-    display: none;
-} */
-
-.thumbnails-scroll--forward {
-    right: 10px;
-    background-image: url("../img/icons/thumbnails-btn-forward-bg.svg");
-    background-position: 2px center;
-}
-
-.thumbnails-scroll--back {
-    left: 10px;
-    background-image: url("../img/icons/thumbnails-btn-back-bg.svg");
-    background-position: 10px center;
-}
-
 @media screen and (min-width: 700px) {
     .filter-categories__list {
         left: 50%;
@@ -258,7 +229,4 @@
         opacity: 1;
     }
 
-    .thumbnails-scroll-button:hover {
-        background-color: rgba(52, 73, 94, 0.5);
-    }
 }

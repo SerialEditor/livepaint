@@ -3,6 +3,7 @@
 let filterCategories = document.querySelector('.filter-categories');
 let currentCategory = filterCategories.querySelector('.current-category');
 let categoryButtons = filterCategories.querySelectorAll('.filter-category-button');
+let isSelectedFilter;
 
 for (let categoryButton of categoryButtons) {
     categoryButton.addEventListener('click', function () {
@@ -14,15 +15,20 @@ for (let categoryButton of categoryButtons) {
         for (let item of previewItems) {
             if (item.dataset.category !== categoryButton.dataset.category && categoryButton.dataset.category !== 'all') {
                 item.classList.add('full--hidden');
-            } else {item.classList.remove('full--hidden');}
+            } else { item.classList.remove('full--hidden'); }
+        }
+        if (!previewList.classList.contains('column--layout')) {
+            setInitState = getInitStateSetter(previewList, previewItems);
+            setInitState();
+            isSelectedFilter = false;
+        } else {
+            isSelectedFilter = true;
         }
         slideSources = getSlideSources(previewMagnifyingButtons);
         slideTitle.textContent = slideSources[0].dataset.fileTitle;
         sliderImage.src = slideSources[0].href;
         filterCategories.removeAttribute('open');
-        if (!previewList.classList.contains('column--layout')) {
-            setPreviewScrollability();
-        } 
+        previewList.scrollTo(0, 0);
     });
 }
 
