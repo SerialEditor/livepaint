@@ -52,6 +52,24 @@
     box-shadow: 0 0 3px 0 #000000;
 }
 
+.slide-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: inherit;
+    font-size: 2em;
+    line-height: 1.2;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 3px;
+    color: #ffffff;
+    background-color: rgba(52, 73, 94, 0.6);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
 .slider--close {
     position: absolute;
     top: 5px;
@@ -85,24 +103,6 @@
 
 .slider--close:focus {
     background-color: rgba(139, 0, 139, 0.3);
-}
-
-.slide-title {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    font-family: inherit;
-    font-size: 2em;
-    line-height: 1.2;
-    font-style: italic;
-    letter-spacing: 1px;
-    text-align: center;
-    padding: 3px;
-    color: #ffffff;
-    background-color: rgba(52, 73, 94, 0.6);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
 .slider__button-bar {
