@@ -18,7 +18,8 @@
     position: relative;
 }
 
-.filter-categories summary, .filter-category-button {
+.filter-categories summary,
+.filter-category-button {
     font-family: inherit;
     font-size: 1.6rem;
     line-height: 1.5;
@@ -45,9 +46,31 @@
 }
 
 .filter-category-button {
+    position: relative;
     display: block;
     padding: 5px 10px;
     background-color: transparent;
+}
+
+.filter-category-button::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: calc(100% - 20px);
+    height: 2px;
+    background-color: #5aace8;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity .15s;
+}
+
+.filter-category-button:focus::after {
+    opacity: 1;
+}
+
+.current-category::after {
+    opacity: 1;
 }
 
 .preview-settings {
@@ -84,7 +107,8 @@
     --set-after-opacity: 0;
 }
 
-.layout--set::before, .layout--set::after {
+.layout--set::before,
+.layout--set::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -100,7 +124,7 @@
 }
 
 .layout--set::before {
-    background-image: url("../img/icons/row-layout-bg.svg");    
+    background-image: url("../img/icons/row-layout-bg.svg");
     opacity: var(--set-before-opacity);
 }
 
@@ -109,7 +133,8 @@
     opacity: var(--set-after-opacity);
 }
 
-.layout--set:focus::before, .layout--set:focus::after {
+.layout--set:focus::before,
+.layout--set:focus::after {
     background-color: #8b008b;
 }
 
@@ -217,11 +242,16 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+    .filter-category-button:hover::after {
+        opacity: 1;
+    }
+
     .preview-settings__button:hover {
         background-color: #8b008b;
     }
 
-    .layout--set:hover::before, .layout--set:hover::after {
+    .layout--set:hover::before,
+    .layout--set:hover::after {
         background-color: #8b008b;
     }
 

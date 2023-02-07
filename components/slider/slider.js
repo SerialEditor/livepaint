@@ -3,7 +3,7 @@
 let sliderOpenButton = document.querySelector('.slider--set');
 let sliderMask = document.querySelector('.slider-mask');
 let slider = document.querySelector('.slider');
-let sliderWindow = slider.querySelector('.slider__viewier-window');
+let sliderViewierContainer = slider.querySelector('.slider__viewier-container');
 let sliderImage = document.querySelector('.slider__image');
 let slideTitle = slider.querySelector('.slide-title');
 let sliderButtonBar = slider.querySelector('.slider__button-bar');
@@ -19,11 +19,11 @@ function openSlider() {
 }
 
 function changeSlide(elem, src) {
-    sliderWindow.classList.add('full--transparent');
+    sliderViewierContainer.classList.add('full--transparent');
     slideTitle.textContent = src.dataset.fileTitle;
     elem.src = src.href;
     elem.onload = function () {
-        setTimeout(() => { sliderWindow.classList.remove('full--transparent') }, 250);
+        setTimeout(() => { sliderViewierContainer.classList.remove('full--transparent') }, 250);
     }
 }
 

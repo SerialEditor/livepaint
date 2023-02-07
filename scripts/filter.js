@@ -1,17 +1,18 @@
 'use strict';
 
 let filterCategories = document.querySelector('.filter-categories');
-let currentCategory = filterCategories.querySelector('.current-category');
+let summaryCategory = filterCategories.querySelector('.filter-categories__summary');
 let categoryButtons = filterCategories.querySelectorAll('.filter-category-button');
+let currentCategory = filterCategories.querySelector('.current-category');
 let isSelectedFilter;
 
 for (let categoryButton of categoryButtons) {
     categoryButton.addEventListener('click', function () {
-        if (categoryButton.textContent === currentCategory.textContent) {
+        if (categoryButton.textContent === summaryCategory.textContent) {
             filterCategories.removeAttribute('open');
             return;
         }
-        currentCategory.textContent = categoryButton.textContent;
+        summaryCategory.textContent = categoryButton.textContent;
         for (let item of previewItems) {
             if (item.dataset.category !== categoryButton.dataset.category && categoryButton.dataset.category !== 'all') {
                 item.classList.add('full--hidden');
@@ -27,7 +28,10 @@ for (let categoryButton of categoryButtons) {
         slideSources = getSlideSources(previewMagnifyingButtons);
         slideTitle.textContent = slideSources[0].dataset.fileTitle;
         sliderImage.src = slideSources[0].href;
-        filterCategories.removeAttribute('open');
+        currentCategory.classList.remove('current-category');
+        currentCategory = categoryButton;
+        currentCategory.classList.add('current-category');
+        setTimeout(function () {filterCategories.removeAttribute('open');}, 300);
         previewList.scrollTo(0, 0);
     });
 }
