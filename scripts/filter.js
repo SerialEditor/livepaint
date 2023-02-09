@@ -31,7 +31,7 @@ for (let categoryButton of categoryButtons) {
         currentCategory.classList.remove('current-category');
         currentCategory = categoryButton;
         currentCategory.classList.add('current-category');
-        setTimeout(function () {filterCategories.removeAttribute('open');}, 300);
+        setTimeout(function () {filterCategories.removeAttribute('open');}, 400);
         previewList.scrollTo(0, 0);
     });
 }

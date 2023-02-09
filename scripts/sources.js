@@ -22,5 +22,14 @@ function setButtonAbility(button, boolean) {
 
 let slideSources = getSlideSources(previewMagnifyingButtons);
 
+document.addEventListener('DOMContentLoaded', function () {
+    previewMagnifyingButtons[0].classList.add('animated--tooltip');
+});
+
+previewMagnifyingButtons[0].addEventListener('animationend', function (evt) {
+    evt.target.classList.remove('animated--tooltip');
+});
+
+
 
 
