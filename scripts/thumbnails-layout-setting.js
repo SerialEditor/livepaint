@@ -18,7 +18,7 @@ layoutSetButton.addEventListener('click', function () {
         }, 250);
         layoutModeText.textContent = 'Выстроить колонками';
         if (isSelectedFilter || isResize) {
-            setInitState = getInitStateSetter(previewList, previewItems);
+            setInitState = getInitStateSetter(previewList, displayPreviews);
             setInitState();
             isSelectedFilter = false;
             isResize = false;

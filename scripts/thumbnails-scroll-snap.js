@@ -1,4 +1,4 @@
-function getInitStateSetter (parent, children) {
+function getInitStateSetter(parent, children) {
     let props = {
         clientWidth: parent.clientWidth,
         firstChild: children[0],
@@ -6,13 +6,13 @@ function getInitStateSetter (parent, children) {
     };
     return function () {
         for (let child of children) {
-            if (child.classList.contains('snap--end')) {
+            if (child.classList.contains('snap--start')) {
+                child.classList.remove('snap--start');
+            } else if (child.classList.contains('snap--end')) {
                 child.classList.remove('snap--end');
             }
         }
-        if (!props.firstChild.classList.contains('snap--start')) {
-            props.firstChild.classList.add('snap--start');
-        }
+        props.firstChild.classList.add('snap--start');
         let pointsQuantity = Math.floor(props.clientWidth / 160);
         for (let i = pointsQuantity - 1; i < children.length; i += pointsQuantity) {
             children[i].classList.add('snap--end');
@@ -27,7 +27,7 @@ let isResize;
 
 window.addEventListener('resize', function () {
     if (!previewList.classList.contains('column--layout')) {
-        setInitState = getInitStateSetter(previewList, previewItems);
+        setInitState = getInitStateSetter(previewList, displayPreviews);
         setInitState();
         isResize = false;
     } else {
@@ -35,5 +35,5 @@ window.addEventListener('resize', function () {
     }
 });
 
-let setInitState = getInitStateSetter(previewList, previewItems);
+let setInitState = getInitStateSetter(previewList, displayPreviews);
 setInitState();

@@ -51,45 +51,40 @@
     z-index: 1;
     top: calc(100% + 15px);
     left: -10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 160px;
+    width: 180px;
     padding: 10px;
     background-color: rgba(52, 73, 94, 0.9);
     border-radius: 5px;
 }
 
-.filter-categories__item:not(:last-child) {
+.filter-categories__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
+}
+
+.filter-categories__item:last-child {
+    margin-bottom: 0;
 }
 
 .filter-category-button {
     position: relative;
-    display: block;
     padding: 5px 10px;
     background-color: transparent;
 }
 
-.filter-category-button::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: calc(100% - 20px);
-    height: 2px;
-    background-color: #5aace8;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity .15s;
+.paintings-number {
+    font-size: 2.2rem;
+    line-height: 1;
+    font-style: italic;
+    color: #ffffff;
+    padding: 5px;
+    visibility: hidden;
 }
 
-.filter-category-button:focus::after {
-    opacity: 1;
-}
-
-.current-category::after {
-    opacity: 1;
+.current-category .paintings-number {
+    visibility: visible;
 }
 
 .view-settings {
@@ -173,9 +168,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 160px);
     align-items: center;
+    min-height: 256px;
     padding: 20px 0;
     background-color: #faebd7;
     overflow: scroll;
+    scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
@@ -232,7 +229,7 @@
     left: 50%;
     width: 48px;
     height: 48px;
-    background-color: rgba(7, 87, 145, 0.7);
+    background-color: rgba(7, 87, 145, 0.5);
     background-image: url("../img/icons/magnifying-btn-bg.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -254,20 +251,24 @@
 
 .animated--tooltip {
     animation-name: tooltip;
-    animation-duration: 3s;
+    animation-duration: 5s;
     animation-timing-function: ease-in;
 }
 
 @keyframes tooltip {
     0% {
         opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    20% {
+        opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
-    25% {
+    60% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1.2);
+        transform: translate(-50%, -50%) scale(1);
     }
-    75% {
+    80% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.2);
     }

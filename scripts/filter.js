@@ -18,18 +18,19 @@ for (let categoryButton of categoryButtons) {
                 item.classList.add('full--hidden');
             } else { item.classList.remove('full--hidden'); }
         }
+        displayPreviews = getDisplayItems(previewItems);
         if (!previewList.classList.contains('column--layout')) {
-            setInitState = getInitStateSetter(previewList, previewItems);
+            setInitState = getInitStateSetter(previewList, displayPreviews);
             setInitState();
             isSelectedFilter = false;
         } else {
             isSelectedFilter = true;
         }
-        slideSources = getSlideSources(previewMagnifyingButtons);
+        slideSources = getDisplayItems(previewMagnifyingButtons);
         slideTitle.textContent = slideSources[0].dataset.fileTitle;
         sliderImage.src = slideSources[0].href;
         currentCategory.classList.remove('current-category');
-        currentCategory = categoryButton;
+        currentCategory = categoryButton.parentElement;
         currentCategory.classList.add('current-category');
         setTimeout(function () {filterCategories.removeAttribute('open');}, 400);
         previewList.scrollTo(0, 0);

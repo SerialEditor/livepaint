@@ -6,21 +6,22 @@ let previewList = document.querySelector('.preview__thumbnails-list');
 let previewItems = previewList.querySelectorAll('.preview__thumbnails-item');
 let previewMagnifyingButtons = previewList.querySelectorAll('.magnifying-button');
 
-function getSlideSources (sources) {
-    let slidesArray = [];
-    sources.forEach(function (source) {
-        if (!source.parentElement.classList.contains('full--hidden')) {
-            slidesArray.push(source);
+function getDisplayItems (items) {
+    let displayItemsArray = [];
+    items.forEach(function (item) {
+        if (!item.classList.contains('full--hidden') && !item.parentElement.classList.contains('full--hidden')) {
+            displayItemsArray.push(item);
         }
     });
-    return slidesArray; 
+    return displayItemsArray;
 }
 
 function setButtonAbility(button, boolean) {
     button.disabled = boolean;
 }
 
-let slideSources = getSlideSources(previewMagnifyingButtons);
+let displayPreviews = getDisplayItems(previewItems);
+let slideSources = getDisplayItems(previewMagnifyingButtons);
 
 document.addEventListener('DOMContentLoaded', function () {
     previewMagnifyingButtons[0].classList.add('animated--tooltip');

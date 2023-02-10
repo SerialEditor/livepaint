@@ -11,25 +11,3 @@ for (let button of previewMagnifyingButtons) {
         changeSlide(sliderImage, button); 
     });
 }
-
-// for (let item of previewItems) {
-//     item.addEventListener('touchstart', function () {
-//         if (!touchedPreviewItem) {
-//             touchedPreviewItem = item;
-//         }
-//         if (touchedPreviewItem && touchedPreviewItem !== item) {
-//             touchedPreviewItem.classList.remove('touch--visualised');
-//             touchedPreviewItem = item;
-//         }
-//         if (!touchedPreviewItem.classList.contains('touch--visualised')) {
-//             touchedPreviewItem.classList.add('touch--visualised');
-//         }
-//     });
-// }
-
-// document.addEventListener('touchstart', function (evt) {
-//     if (touchedPreviewItem && !evt.target.closest('.preview__thumbnails-item')) {
-//         touchedPreviewItem.classList.remove('touch--visualised');
-//         touchedPreviewItem = null;
-//     } 
-// });
