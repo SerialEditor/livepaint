@@ -2,11 +2,11 @@
 
 .preview__toolbar-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     max-width: 800px;
     margin: 0 auto;
     margin-bottom: 15px;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
 .filter {
@@ -20,10 +20,7 @@
 
 .filter-categories__summary,
 .filter-category-button {
-    font-family: inherit;
     font-size: 1.6rem;
-    line-height: 1.5;
-    color: #ffffff;
     text-transform: uppercase;
 }
 
@@ -75,10 +72,7 @@
 }
 
 .paintings-number {
-    font-size: 2.2rem;
-    line-height: 1;
-    font-style: italic;
-    color: #ffffff;
+    font-size: 1.8rem;
     padding: 5px;
     visibility: hidden;
 }
@@ -88,7 +82,7 @@
 }
 
 .view-settings {
-    width: 45%;
+    width: 50%;
     max-width: 300px;
 }
 
@@ -276,6 +270,10 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.5);
     }
+}
+
+.novelty {
+    padding: 0 10px;
 }
 
 .novelty__title {
