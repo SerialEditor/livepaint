@@ -7,7 +7,7 @@
 .preview__toolbar-container {
     display: flex;
     justify-content: space-between;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     margin-bottom: 15px;
     padding: 0 10px;
@@ -278,6 +278,8 @@
 }
 
 .novelty {
+    display: flex;
+    flex-direction: column;
     padding: 0 10px;
 }
 
@@ -289,18 +291,19 @@
     margin-bottom: 15px;
 }
 
-.novelty__image {
-    margin-bottom: 2px;
-}
-
-.novelty p {
-    margin: 0;
+.novelty__inner-wrapper {
+    position: relative;
+    align-self: center;
 }
 
 .novelty__image-title {
+    position: absolute;
+    top: 100%;
+    left: 50%;
     font-size: 1.8rem;
     font-style: italic;
-    margin-bottom: 15px;
+    margin: 0;
+    transform: translate(-50%, -100%);
 }
 
 @media screen and (min-width: 700px) {
@@ -308,6 +311,12 @@
         left: 50%;
         width: 200px;
         transform: translateX(-50%);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .novelty__inner-wrapper {
+        align-self: flex-start;
     }
 }
 
