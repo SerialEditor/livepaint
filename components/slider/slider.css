@@ -56,14 +56,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    font-family: inherit;
     font-size: 2em;
-    line-height: 1.2;
+    line-height: 1.4;
     font-style: italic;
     letter-spacing: 1px;
     text-align: center;
-    padding: 3px;
-    color: #ffffff;
     background-color: rgba(52, 73, 94, 0.6);
 }
 
