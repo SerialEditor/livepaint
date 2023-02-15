@@ -51,7 +51,7 @@
     box-shadow: 0 0 6px -2px #000000;
 }
 
-.slide-title {
+.slider__slide-title {
     position: absolute;
     left: 0;
     right: 0;
@@ -64,7 +64,7 @@
     background-color: rgba(52, 73, 94, 0.6);
 }
 
-.slider--close {
+.slider__close-button {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -75,8 +75,8 @@
     transition: .25s;
 }
 
-.slider--close::before,
-.slider--close::after {
+.slider__close-button::before,
+.slider__close-button::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -87,16 +87,16 @@
     transition: .25s;
 }
 
-.slider--close::before {
+.slider__close-button::before {
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.slider--close::after {
+.slider__close-button::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.slider--close:focus {
-    background-color: rgba(139, 0, 139, 0.3);
+.slider__close-button:focus {
+    background-color: rgba(106, 106, 106, 0.7);
 }
 
 .slider__button-bar {
@@ -193,14 +193,14 @@
 }
 
 @media screen and (orientation: landscape) {
-    .slide-title {
+    .slider__slide-title {
         font-size: 1.8em;
     }
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .slider--close:hover {
-        background-color: rgba(139, 0, 139, 0.3);
+    .slider__close-button:hover {
+        background-color: rgba(106, 106, 106, 0.7);
     }
 
     .slider__button:hover {

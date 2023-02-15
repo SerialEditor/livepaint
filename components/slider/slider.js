@@ -5,11 +5,11 @@ let sliderMask = document.querySelector('.slider-mask');
 let slider = document.querySelector('.slider');
 let sliderViewierContainer = slider.querySelector('.slider__viewier-container');
 let sliderImage = document.querySelector('.slider__image');
-let slideTitle = slider.querySelector('.slide-title');
+let slideTitle = slider.querySelector('.slider__slide-title');
 let sliderButtonBar = slider.querySelector('.slider__button-bar');
 let buttonBack = slider.querySelector('.button--back');
 let buttonForward = slider.querySelector('.button--forward');
-let sliderClose = slider.querySelector('.slider--close');
+let sliderButtonClose = slider.querySelector('.slider__close-button');
 let slideCounter = 0;
 
 function openSlider() {
@@ -81,7 +81,7 @@ buttonForward.addEventListener('click', function () {
     }
 });
 
-sliderClose.addEventListener('click', function () {
+sliderButtonClose.addEventListener('click', function () {
     closeSlider();
 });
 
