@@ -60,6 +60,7 @@
 
 .filter-categories__item {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -76,9 +77,8 @@
 
 .paintings-number {
     position: relative;
-    font-size: 1.6rem;
-    margin-left: auto;
-    margin-right: 10px;
+    font-size: 1.8rem;
+    padding: 0 5px;
     visibility: hidden;
 }
 

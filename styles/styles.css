@@ -14,13 +14,15 @@
     font-display: swap;
 }
 
-ul, ol {
+ul,
+ol {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-dl, dd {
+dl,
+dd {
     margin: 0;
 }
 
@@ -49,7 +51,8 @@ button {
     cursor: pointer;
 }
 
-a:focus, button:focus {
+a:focus,
+button:focus {
     outline: none;
 }
 
@@ -115,14 +118,15 @@ summary {
 }
 
 .navigation {
+    display: flex;
+    align-items: baseline;
     max-width: 1440px;
     margin: 0 auto;
     padding: 10px;
 }
 
 .logo {
-    display: block;
-    width: 100px;
+    width: 120px;
     margin-right: 20px;
 }
 
@@ -180,7 +184,8 @@ summary {
     transition: border-color .4s ease;
 }
 
-.navigation__list--toggler::before, .navigation__list--toggler::after {
+.navigation__list--toggler::before,
+.navigation__list--toggler::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -214,6 +219,22 @@ summary {
 .page-main {
     max-width: 1440px;
     margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.page-footer {
+    background-color: #263647;
+}
+
+.page-footer__inner-container {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-footer__logo {
+    margin: auto;
 }
 
 @media screen and (max-width: 767px) {
@@ -259,9 +280,6 @@ summary {
     }
 
     .navigation {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
         padding-left: 20px;
     }
 
