@@ -70,7 +70,7 @@
     right: 5px;
     width: 42px;
     height: 42px;
-    background-color: rgba(106, 106, 106, 0.5);
+    background-color: rgba(52, 73, 94, 0.3);
     border-radius: 50%;
     transition: .25s;
 }
@@ -96,7 +96,7 @@
 }
 
 .slider__close-button:focus {
-    background-color: rgba(106, 106, 106, 0.7);
+    background-color: rgba(52, 73, 94, 0.6);
 }
 
 .slider__button-bar {
@@ -200,7 +200,7 @@
 
 @media (hover: hover) and (pointer: fine) {
     .slider__close-button:hover {
-        background-color: rgba(106, 106, 106, 0.7);
+        background-color: rgba(52, 73, 94, 0.6);
     }
 
     .slider__button:hover {
