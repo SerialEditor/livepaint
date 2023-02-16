@@ -113,8 +113,13 @@ summary {
 
 .logo {
     display: block;
-    width: 90px;
+    width: 100px;
     margin-right: 20px;
+}
+
+.logo img {
+    display: inline-block;
+    vertical-align: bottom;
 }
 
 .navigation__list {
@@ -131,15 +136,16 @@ summary {
     position: relative;
     display: block;
     font-size: 2rem;
+    line-height: 1.2;
     text-align: center;
     padding: 10px 20px;
     text-transform: uppercase;
     border-radius: 5px;
 }
 
-.navigation__link.current {
+/* .navigation__link.current {
     background-color: #5aace8;
-}
+} */
 
 .navigation__list--toggler {
     position: absolute;
@@ -235,7 +241,7 @@ summary {
     .navigation {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: baseline;
         padding-left: 20px;
     }
 
