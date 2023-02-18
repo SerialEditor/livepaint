@@ -245,30 +245,35 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.5);
     }
+
     20% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
+
     60% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
+
     80% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.2);
     }
+
     100% {
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.5);
     }
 }
 
-.novelty {
-    display: flex;
+.novelties {
     flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.novelty__title {
+.novelties__title {
     font-size: 3rem;
     font-weight: normal;
     text-align: center;
@@ -276,19 +281,69 @@
     margin-bottom: 15px;
 }
 
-.novelty__inner-wrapper {
-    position: relative;
-    align-self: center;
+.novelties__list {
+    container-type: inline-size;
+    container-name: novelties;
+    display: flex;
+    font-style: italic;
 }
 
-.novelty__image-title {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    font-size: 1.8rem;
-    font-style: italic;
+.novelty {
+    display: grid;
+    grid-template-areas: "image"
+        "title"
+        "footer";
+    font-size: clamp(1.6rem, 0.5rem + 2.5vw, 1.8rem);
+}
+
+.novelty * {
     margin: 0;
-    transform: translate(-50%, -100%);
+}
+
+.novelty__title {
+    grid-area: title;
+    font-size: clamp(1.6rem, 1rem + 2.5vw, 2.2rem);
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    padding: 0 5px;
+}
+
+.novelty__image {
+    grid-area: image;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.novelty__footer {
+    grid-area: footer;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 0 5px;
+}
+
+@container novelties (min-width: 420px) {
+    .novelty {
+        grid-template-columns: minmax(250px, 1fr) minmax(min-content,200px);
+        grid-template-rows: minmax(calc(clamp(1.6rem, 1rem + 2.5vw, 2.2rem) * 1.2), auto) auto;
+        grid-template-areas: "image title"
+                             "image footer";
+        column-gap: 10px;
+    }
+
+    .novelty__title {
+        margin-bottom: 0;
+    }
+
+    .novelty__footer {
+        align-self: end;
+    }
+
+    .novelty__footer p:first-child {
+        flex-basis: 100%;
+    }
 }
 
 @media screen and (min-width: 700px) {
@@ -299,15 +354,8 @@
     }
 }
 
-@media screen and (min-width: 800px) {
-    .novelty__inner-wrapper {
-        align-self: flex-start;
-    }
-}
-
 @media (hover: hover) and (pointer: fine) {
     .preview__thumbnails-item:hover .magnifying-button {
         opacity: 1;
     }
-
 }
