@@ -106,14 +106,14 @@ summary {
     margin: 0;
     font-family: 'PT Sans', 'Helvetiсa', 'Arial', sans-serif;
     line-height: 1.2;
-    color: #ffffff;
-    background-color: #34495e;
+    color: #000000;
+    background-color: #ffffff;
 }
 
 .page-header {
     position: relative;
     margin-bottom: 20px;
-    background-color: #34495e;
+    background-color: #ffffff;
 }
 
 .navigation {
@@ -137,7 +137,7 @@ summary {
 .navigation__list {
     display: flex;
     flex-direction: column;
-    background-color: #34495e;
+    background-color: #ffffff;
 }
 
 .navigation__item {
@@ -149,6 +149,7 @@ summary {
     display: block;
     font-size: 2rem;
     text-align: center;
+    letter-spacing: 2px;
     padding: 10px 20px;
     text-transform: uppercase;
     border-radius: 5px;
@@ -159,15 +160,19 @@ summary {
     position: absolute;
     top: 100%;
     left: 50%;
-    width: calc(100% - 40px);
+    width: 0;
     height: 2px;
-    background-color: transparent;
+    background-color: #000000;
     transform: translate(-50%, -10px);
-    transition: background-color .4s;
+    transition: width .4s;
+}
+
+.navigation__link:focus::after {
+    width: calc(100% - 40px);
 }
 
 .navigation__link.current::after {
-    background-color: #ffffff;
+    width: calc(100% - 40px);
 }
 
 .navigation__list--toggler {
@@ -176,7 +181,7 @@ summary {
     right: 10px;
     width: 36px;
     height: 36px;
-    border: 2px solid #ffffff;
+    border: 2px solid #ab74de;
     border-radius: 5px;
     transform: translateY(-50%);
     transition: border-color .4s ease;
@@ -190,14 +195,14 @@ summary {
     left: 50%;
     width: 28px;
     height: 2px;
-    background-color: #ffffff;
+    background-color: #ab74de;
     transform: translate(-50%, -50%);
     transition: transform .4s ease;
 }
 
 .navigation__list--toggler::before {
-    box-shadow: 0 -8px 0 0 #ffffff,
-        0 8px 0 0 #ffffff;
+    box-shadow: 0 -8px 0 0 #ab74de,
+        0 8px 0 0 #ab74de;
 }
 
 .navigation__list--toggler.toggler--on {
@@ -298,6 +303,6 @@ summary {
 
 @media (hover: hover) and (pointer: fine) {
     .navigation__link:hover::after {
-        background-color: #ffffff;
+        width: calc(100% - 40px);
     }
 }

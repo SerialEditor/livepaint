@@ -47,10 +47,11 @@
     grid-area: title;
     display: flex;
     align-items: center;
-    font-size: clamp(2rem, 0.7rem + 2vw, 2.8rem);
+    font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem);
     font-weight: normal;
+    text-transform: uppercase;
     padding: 0 5px;
-    background-color: rgba(52, 73, 94, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     transform: translateX(-25%);
 }
 
@@ -66,10 +67,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    font-size: clamp(1.4rem, 0.7rem + 2vw, 1.8rem);
+    font-size: clamp(1.6rem, 1rem + 2vw, 2rem);
     font-style: italic;
     padding: 0 5px;
-    background-color: rgba(52, 73, 94, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     transform: translateX(-25%);
 }
 
@@ -130,7 +131,7 @@
     left: -10px;
     width: 180px;
     padding: 10px;
-    background-color: rgba(52, 73, 94, 0.9);
+    background-color: #ffffff;
     border-radius: 5px;
 }
 
@@ -229,7 +230,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 160px);
     align-items: center;
-    /* min-height: 256px; */
     overflow: scroll;
     scroll-behavior: smooth;
     -ms-overflow-style: none;
@@ -279,22 +279,19 @@
 
 .preview__thumbnail {
     flex-shrink: 0;
-    box-shadow: 0 0 6px -2px #000000;
 }
 
 .magnifying-button {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 48px;
-    height: 48px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
     background-color: rgba(7, 87, 145, 0.5);
     background-image: url("../img/icons/magnifying-btn-bg.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 65%;
-    border-radius: 75%;
-    box-shadow: 0 0 2px 0 #000000;
+    background-size: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity .25s;
