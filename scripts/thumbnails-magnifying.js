@@ -1,7 +1,5 @@
 'use strict';
 
-let touchedPreviewItem = null;
-
 for (let button of previewMagnifyingButtons) {
     button.addEventListener('click', function (evt) {
         evt.preventDefault();

@@ -1,6 +1,6 @@
 'use strict';
 
-let navListToggler = document.querySelector('.navigation__list--toggler');
+let navListToggler = document.querySelector('.navigation__button-toggle');
 let navList = document.querySelector('.navigation__list');
 
 navListToggler.addEventListener('click', function () {

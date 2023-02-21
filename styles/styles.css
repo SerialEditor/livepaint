@@ -149,7 +149,7 @@ summary {
     display: block;
     font-size: 2rem;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     padding: 10px 20px;
     text-transform: uppercase;
     border-radius: 5px;
@@ -175,20 +175,17 @@ summary {
     width: calc(100% - 40px);
 }
 
-.navigation__list--toggler {
+.navigation__button-toggle {
     position: absolute;
     top: 50%;
     right: 10px;
     width: 36px;
     height: 36px;
-    border: 2px solid #ab74de;
-    border-radius: 5px;
     transform: translateY(-50%);
-    transition: border-color .4s ease;
 }
 
-.navigation__list--toggler::before,
-.navigation__list--toggler::after {
+.navigation__button-toggle::before,
+.navigation__button-toggle::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -200,22 +197,18 @@ summary {
     transition: transform .4s ease;
 }
 
-.navigation__list--toggler::before {
+.navigation__button-toggle::before {
     box-shadow: 0 -8px 0 0 #ab74de,
         0 8px 0 0 #ab74de;
 }
 
-.navigation__list--toggler.toggler--on {
-    border-color: transparent;
-}
-
-.navigation__list--toggler.toggler--on::before {
+.navigation__button-toggle.toggler--on::before {
     transform: translate(-50%, -50%) rotate(45deg);
     box-shadow: 0 -8px 0 0 transparent,
         0 8px 0 0 transparent;
 }
 
-.navigation__list--toggler.toggler--on::after {
+.navigation__button-toggle.toggler--on::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
@@ -278,7 +271,7 @@ summary {
 }
 
 @media screen and (min-width: 768px) {
-    .navigation__list--toggler {
+    .navigation__button-toggle {
         display: none;
     }
 
