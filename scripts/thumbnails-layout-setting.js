@@ -11,18 +11,13 @@ layoutSetButton.addEventListener('click', function () {
             layoutSetButton.setAttribute('style', '--set-before-opacity: 0; --set-after-opacity: 1;');
         }, 250);
         layoutModeText.textContent = 'Выстроить в ряд';
+        previewList.style.transform = `translateX(0)`;
     } else {
         layoutSetButton.setAttribute('style', '--set-before-opacity: 0; --set-after-opacity: 0;');
         setTimeout(function () {
             layoutSetButton.setAttribute('style', '--set-after-opacity: 0; --set-before-opacity: 1');
         }, 250);
         layoutModeText.textContent = 'Выстроить колонками';
-        if (isSelectedFilter || isResize) {
-            setInitState = getInitStateSetter(previewList, displayPreviews);
-            setInitState();
-            isSelectedFilter = false;
-            isResize = false;
-        }
-        previewList.scrollTo(0, 0);
+        setTranslateInitState();
     }
 });
