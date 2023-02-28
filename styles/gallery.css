@@ -133,21 +133,6 @@
     width: max-content;
 }
 
-.filter-categories__summary::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 24px;
-    height: 20px;
-    background-image: url("../img/icons/drop-down-elem-bg.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 70%;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-}
-
 .filter-categories__list {
     position: absolute;
     z-index: 1;
@@ -162,7 +147,7 @@
 
 .filter-categories__item {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .filter-categories__item:last-child {
@@ -184,7 +169,7 @@
     width: 0;
     height: 2px;
     background-color: #000000;
-    transition: width .4s linear;
+    transition: width .25s linear;
 }
 
 .filter-categories__button:focus::after {
@@ -195,7 +180,7 @@
     position: relative;
 }
 
-.view-settings__list-container {
+.view-settings__list-wrapper {
     position: absolute;
     z-index: 1;
     top: 100%;
@@ -205,12 +190,9 @@
 }
 
 .view-settings__list {
-    width: max-content;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     font-size: 1.6rem;
+    width: max-content;
+    padding: .5em 0;
     background-color: #ffffff;
     border-radius: .5rem;
     box-shadow: 0 0 5px -1px #000000;
@@ -223,17 +205,19 @@
 }
 
 .view-settings__item {
+    text-align: center;
     margin-bottom: .5em;
+}
+
+.view-settings__item:last-child {
+    margin-bottom: 0;
 }
 
 .view-settings__button {
     position: relative;
-    display: block;
+    display: inline-block;
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-transition: .25s;
-    -o-transition: .25s;
-    transition: .25s;
 }
 
 .set-display-mode {
@@ -250,7 +234,7 @@
     width: 0;
     height: 2px;
     background-color: #000000;
-    transition: width .4s linear;
+    transition: width .25s linear;
 }
 
 .set-display-mode:focus::after {
@@ -425,6 +409,10 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+    .filter-categories__button:hover::after {
+        width: calc(100% - 2rem);
+    }
+
     .set-display-mode:hover::after {
         width: calc(100% - 1em);
     }

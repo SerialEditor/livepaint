@@ -3,7 +3,6 @@
 let filterCategories = document.querySelector('.filter-categories');
 let summaryCategory = filterCategories.querySelector('.filter-categories__summary');
 let categoryButtons = filterCategories.querySelectorAll('.filter-categories__button');
-let isSelectedFilter;
 
 for (let categoryButton of categoryButtons) {
     categoryButton.addEventListener('click', function () {
