@@ -1,7 +1,7 @@
 'use strict';
 
-let navListToggler = document.querySelector('.navigation__button-toggle');
 let navList = document.querySelector('.navigation__list');
+let navListToggler = document.querySelector('.navigation__button-toggle');
 
 navListToggler.addEventListener('click', function () {
     navList.classList.toggle('navigation__list--showed');

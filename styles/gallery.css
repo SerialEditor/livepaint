@@ -106,13 +106,13 @@
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
+    align-items: center;
     max-width: 600px;
     margin: 0 auto;
     padding: 0 10px;
 }
 
 .filter {
-    align-self: center;
     width: 140px;
 }
 
@@ -154,18 +154,14 @@
     top: calc(100% + 15px);
     left: -10px;
     width: 180px;
-    padding: 10px;
+    padding: 1rem;
     background-color: #ffffff;
-    border-radius: 5px;
+    border-radius: .5rem;
+    box-shadow: 0 0 5px -1px #000000;
 }
 
 .filter-categories__item {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
+    text-align: center;
     margin-bottom: 10px;
 }
 
@@ -175,85 +171,98 @@
 
 .filter-categories__button {
     position: relative;
+    display: inline-block;
     line-height: 1.2;
-    padding: 5px 10px;
+    padding: .5rem 1rem;
 }
 
-.paintings-number {
-    position: relative;
-    font-size: 1.8rem;
-    padding: 0 5px;
-    visibility: hidden;
+.filter-categories__button::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 1rem;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width .4s linear;
 }
 
-.current--category .paintings-number {
-    visibility: visible;
+.filter-categories__button:focus::after {
+    width: calc(100% - 2rem);
 }
 
 .view-settings {
-    width: 50%;
-    max-width: 300px;
+    position: relative;
+}
+
+.view-settings__list-container {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    padding: 5px;
+    overflow: hidden;
 }
 
 .view-settings__list {
+    width: max-content;
     display: -webkit-box;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    background-color: #ffffff;
+    border-radius: .5rem;
+    box-shadow: 0 0 5px -1px #000000;
+    transform: translateY(calc(-100% - 10px));
+    transition: transform .25s linear;
 }
 
-.view-settings__item:last-child {
-    margin-left: auto;
+.view-settings__list--showed {
+    transform: translateY(0);
+}
+
+.view-settings__item {
+    margin-bottom: .5em;
 }
 
 .view-settings__button {
     position: relative;
     display: block;
-    width: 48px;
-    height: 42px;
-    padding: 0 5px;
+    background-repeat: no-repeat;
+    background-position: center;
     -webkit-transition: .25s;
     -o-transition: .25s;
     transition: .25s;
 }
 
-.layout--set {
-    --set-before-opacity: 1;
-    --set-after-opacity: 0;
+.set-display-mode {
+    font-size: inherit;
+    padding: .5em;
+    text-transform: uppercase;
 }
 
-.layout--set::before,
-.layout--set::after {
+.set-display-mode::after {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    -webkit-transition: .25s;
-    -o-transition: .25s;
-    transition: .25s;
+    top: 100%;
+    left: .5em;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width .4s linear;
 }
 
-.layout--set::before {
-    background-image: url("../img/icons/row-layout-bg.svg");
-    opacity: var(--set-before-opacity);
+.set-display-mode:focus::after {
+    width: calc(100% - 1em);
 }
 
-.layout--set::after {
-    background-image: url("../img/icons/column-layout-bg.svg");
-    opacity: var(--set-after-opacity);
-}
-
-.slider--set {
-    background-image: url("../img/icons/slider-set-btn-bg.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-transition: .25s;
-    -o-transition: .25s;
-    transition: .25s;
+.settings-button {
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/icons/preview-settings-btn-bg.svg");
+    background-color: #263647;
+    border-radius: 50%;
 }
 
 .preview__thumbnails-container {
@@ -268,6 +277,7 @@
     -webkit-box-align: center;
     align-items: center;
     min-height: 256px;
+    cursor: all-scroll;
     transition: transform .4s ease-in-out;
 }
 
@@ -415,6 +425,10 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+    .set-display-mode:hover::after {
+        width: calc(100% - 1em);
+    }
+
     .preview__thumbnails-item:hover .magnifying-button {
         opacity: 1;
     }

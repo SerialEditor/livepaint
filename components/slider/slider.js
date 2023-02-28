@@ -1,8 +1,5 @@
 'use strict';
 
-let sliderOpenButton = document.querySelector('.slider--set');
-let sliderMask = document.querySelector('.slider-mask');
-let slider = document.querySelector('.slider');
 let sliderViewierContainer = slider.querySelector('.slider__viewier-container');
 let sliderImage = document.querySelector('.slider__image');
 let slideTitle = slider.querySelector('.slider__slide-title');
@@ -11,12 +8,6 @@ let buttonBack = slider.querySelector('.button--back');
 let buttonForward = slider.querySelector('.button--forward');
 let sliderButtonClose = slider.querySelector('.slider__close-button');
 let slideCounter = 0;
-
-function openSlider() {
-    sliderMask.hidden = false;
-    slider.hidden = false;
-    rootElement.classList.add('overflow--hidden');
-}
 
 function changeSlide(elem, src) {
     sliderViewierContainer.classList.add('full--transparent');
@@ -48,10 +39,6 @@ function closeSlider() {
         slideCounter = 0;
     }
 }
-
-sliderOpenButton.addEventListener('click', function () {
-    openSlider();
-});
 
 buttonBack.addEventListener('click', function () {
     if (slideCounter === (slideSources.length - 1)) {

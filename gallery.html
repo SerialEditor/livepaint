@@ -44,7 +44,8 @@
             <ul class="novelties__list">
                 <li class="novelty">
                     <h3 class="novelty__title"><span>Обжигающий кофе</span></h3>
-                    <img class="novelty__image" src="files/slides/Обжигающий_кофе.jpg" width="500" height="355" alt="Натюрморт: глиняный кофейник, перец-чили и луковица">
+                    <img class="novelty__image" src="files/slides/Обжигающий_кофе.jpg" width="500" height="355"
+                        alt="Натюрморт: глиняный кофейник, перец-чили и луковица">
                     <footer class="novelty__footer" role="contentinfo">
                         <p>Натюрморты, гуашь</p>
                         <time datetime="2023-02-12">12 февраля 2023</time>
@@ -52,7 +53,8 @@
                 </li>
                 <li class="novelty">
                     <h3 class="novelty__title"><span>Тайна</span></h3>
-                    <img class="novelty__image" src="files/slides/Тайна.jpg" width="500" height="355" alt="Горящая во тьме свеча, вознесенная над витой лестницей">
+                    <img class="novelty__image" src="files/slides/Тайна.jpg" width="500" height="355"
+                        alt="Горящая во тьме свеча, вознесенная над витой лестницей">
                     <footer class="novelty__footer" role="contentinfo">
                         <p>Композиции, гуашь</p>
                         <time datetime="2023-02-12">22 января 2023</time>
@@ -71,45 +73,50 @@
                             <li class="filter-categories__item current--category">
                                 <button class="filter-categories__button" type="button" data-category="all">Все
                                     картины</button>
-                                <span class="paintings-number">14</span>
+                                <span class="paintings-number"></span>
                             </li>
                             <li class="filter-categories__item">
                                 <button class="filter-categories__button" type="button"
                                     data-category="landscape">Пейзажи</button>
-                                <span class="paintings-number">4</span>
+                                <span class="paintings-number"></span>
                             </li>
                             <li class="filter-categories__item">
                                 <button class="filter-categories__button" type="button"
                                     data-category="still-life">Натюрморты</button>
-                                <span class="paintings-number">5</span>
+                                <span class="paintings-number"></span>
                             </li>
                             <li class="filter-categories__item">
                                 <button class="filter-categories__button" type="button"
                                     data-category="portrait">Портреты</button>
-                                <span class="paintings-number">3</span>
+                                <span class="paintings-number"></span>
                             </li>
                             <li class="filter-categories__item">
                                 <button class="filter-categories__button" type="button"
                                     data-category="composition">Композиции</button>
-                                <span class="paintings-number">2</span>
+                                <span class="paintings-number"></span>
                             </li>
                         </ul>
                     </details>
                 </section>
                 <section class="view-settings">
                     <h3 class="visually-hidden">Режимы просмотра картин галереи</h3>
-                    <ul class="view-settings__list">
-                        <li class="view-settings__item">
-                            <button class="view-settings__button layout--set" type="button">
-                                <span class="layout-mode visually-hidden">Выстроить колонками</span>
-                            </button>
-                        </li>
-                        <li class="view-settings__item">
-                            <button class="view-settings__button slider--set" type="button">
-                                <span class="visually-hidden">Показать слайдами</span>
-                            </button>
-                        </li>
-                    </ul>
+                    <div class="view-settings__list-container">
+                        <ul class="view-settings__list">
+                            <li class="view-settings__item">
+                                <button class="view-settings__button set-display-mode layout--set" type="button">
+                                    Выстроить колонками
+                                </button>
+                            </li>
+                            <li class="view-settings__item">
+                                <button class="view-settings__button set-display-mode slider--set" type="button">
+                                    Открыть в слайдере
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="view-settings__button settings-button" type="button">
+                        <span class="visually-hidden">Показать настройки</span>
+                    </button>
                 </section>
             </div>
             <div class="preview__thumbnails-container">
@@ -247,7 +254,7 @@
     <footer class="page-footer">
         <div class="page-footer__inner-container">
             <a class="page-footer__logo" href="index.html">
-                <img src="img/footer-logo.png" width="120" alt="livepaint - живое творчество"> 
+                <img src="img/footer-logo.png" width="120" alt="livepaint - живое творчество">
             </a>
         </div>
     </footer>
@@ -256,7 +263,7 @@
     <script src="scripts/sources.js"></script>
     <script src="scripts/filter.js"></script>
     <script src="scripts/thumbnails-scroll.js"></script>
-    <script src="scripts/thumbnails-layout-setting.js"></script>
+    <script src="scripts/thumbnails-display-settings.js"></script>
     <script src="components/slider/slider.js"></script>
     <script src="scripts/thumbnails-magnifying.js"></script>
 </body>

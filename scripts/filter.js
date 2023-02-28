@@ -21,7 +21,7 @@ for (let categoryButton of categoryButtons) {
         slideSources = getDisplayItems(previewMagnifyingButtons);
         slideTitle.textContent = slideSources[0].dataset.fileTitle;
         sliderImage.src = slideSources[0].href;
-        setTimeout(function () { filterCategories.removeAttribute('open'); }, 400);
+        setTimeout(function () { filterCategories.removeAttribute('open'); }, 500);
     });
 }
 
