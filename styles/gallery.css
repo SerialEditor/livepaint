@@ -176,32 +176,30 @@
     width: calc(100% - 2rem);
 }
 
+.current--category::after {
+    width: calc(100% - 2rem);
+}
+
 .view-settings {
     position: relative;
 }
 
-.view-settings__list-wrapper {
+.view-settings__list {
     position: absolute;
     z-index: 1;
     top: 100%;
     right: 0;
-    padding: 5px;
-    overflow: hidden;
-}
-
-.view-settings__list {
     font-size: 1.6rem;
     width: max-content;
     padding: .5em 0;
     background-color: #ffffff;
     border-radius: .5rem;
     box-shadow: 0 0 5px -1px #000000;
-    transform: translateY(calc(-100% - 10px));
-    transition: transform .25s linear;
+    display: none;
 }
 
 .view-settings__list--showed {
-    transform: translateY(0);
+    display: block;
 }
 
 .view-settings__item {

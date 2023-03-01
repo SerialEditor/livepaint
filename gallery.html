@@ -43,9 +43,9 @@
             <h2 class="novelties__title">Новые картины</h2>
             <ul class="novelties__list">
                 <li class="novelty">
-                    <h3 class="novelty__title"><span>Обжигающий кофе</span></h3>
-                    <img class="novelty__image" src="files/slides/Обжигающий_кофе.jpg" width="500" height="355"
-                        alt="Натюрморт: глиняный кофейник, перец-чили и луковица">
+                    <h3 class="novelty__title"><span>Хлеб наш насущный</span></h3>
+                    <img class="novelty__image" src="files/slides/Хлеб_наш_насущный.jpg" width="500" height="355"
+                        alt="Хлеб, рыба и глиняный сосуд на куске тканой материи">
                     <footer class="novelty__footer" role="contentinfo">
                         <p>Натюрморты, гуашь</p>
                         <time datetime="2023-02-12">12 февраля 2023</time>
@@ -71,7 +71,8 @@
                         <summary class="filter-categories__summary">Все картины</summary>
                         <ul class="filter-categories__list">
                             <li class="filter-categories__item">
-                                <button class="filter-categories__button current--category" type="button" data-category="all">Все
+                                <button class="filter-categories__button current--category" type="button"
+                                    data-category="all">Все
                                     картины</button>
                                 <span class="paintings-number"></span>
                             </li>
@@ -100,20 +101,18 @@
                 </section>
                 <section class="view-settings">
                     <h3 class="visually-hidden">Режимы просмотра картин галереи</h3>
-                    <div class="view-settings__list-wrapper">
-                        <ul class="view-settings__list">
-                            <li class="view-settings__item">
-                                <button class="view-settings__button set-display-mode layout--set" type="button">
-                                    Выстроить колонками
-                                </button>
-                            </li>
-                            <li class="view-settings__item">
-                                <button class="view-settings__button set-display-mode slider--set" type="button">
-                                    Открыть в слайдере
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="view-settings__list">
+                        <li class="view-settings__item">
+                            <button class="view-settings__button set-display-mode layout--set" type="button">
+                                Выстроить колонками
+                            </button>
+                        </li>
+                        <li class="view-settings__item">
+                            <button class="view-settings__button set-display-mode slider--set" type="button">
+                                Просмотреть в слайдере
+                            </button>
+                        </li>
+                    </ul>
                     <button class="view-settings__button settings-button" type="button">
                         <span class="visually-hidden">Показать настройки</span>
                     </button>
@@ -226,6 +225,14 @@
                             <span class="visually-hidden">Показать увеличенное изображение</span>
                         </a>
                     </li>
+                    <li class="preview__thumbnails-item" data-category="still-life">
+                        <img class="preview__thumbnail" src="files/previews/Хлеб_наш_насущный.jpg" width="120"
+                            height="160" alt="Хлеб, рыба и глиняный сосуд на куске тканой материи">
+                        <a class="magnifying-button" href="files/slides/Хлеб_наш_насущный.jpg"
+                            data-file-title="Хлеб наш насущный">
+                            <span class="visually-hidden">Показать увеличенное изображение</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -261,8 +268,8 @@
     <footer class="page-footer"></footer>
     <script src="scripts/navigation-list-toggle.js"></script>
     <script src="scripts/sources.js"></script>
-    <script src="scripts/filter.js"></script>
     <script src="scripts/thumbnails-scroll.js"></script>
+    <script src="scripts/thumbnails-filter.js"></script>
     <script src="scripts/thumbnails-display-settings.js"></script>
     <script src="components/slider/slider.js"></script>
     <script src="scripts/thumbnails-magnifying.js"></script>

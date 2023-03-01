@@ -3,16 +3,20 @@
 let filterCategories = document.querySelector('.filter-categories');
 let summaryCategory = filterCategories.querySelector('.filter-categories__summary');
 let categoryButtons = filterCategories.querySelectorAll('.filter-categories__button');
+let currentCategory = filterCategories.querySelector('.current--category');
 
 for (let categoryButton of categoryButtons) {
     categoryButton.addEventListener('click', function () {
-        if (categoryButton.textContent === summaryCategory.textContent) {
+        if (categoryButton.textContent === currentCategory.textContent) {
             filterCategories.removeAttribute('open');
             return;
         }
-        summaryCategory.textContent = categoryButton.textContent;
+        currentCategory.classList.remove('current--category');
+        currentCategory = categoryButton;
+        currentCategory.classList.add('current--category');
+        summaryCategory.textContent = currentCategory.textContent;
         for (let item of previewItems) {
-            if (item.dataset.category !== categoryButton.dataset.category && categoryButton.dataset.category !== 'all') {
+            if (item.dataset.category !== currentCategory.dataset.category && currentCategory.dataset.category !== 'all') {
                 item.classList.add('full--hidden');
             } else { item.classList.remove('full--hidden'); }
         }
