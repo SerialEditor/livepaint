@@ -64,13 +64,17 @@
     transform: translateX(-25%);
 }
 
-.novelty__image {
+.novelty__image-container {
     grid-area: image;
-    height: 100%;
+}
+
+.novelty__image {
+    display: block;
+    /* height: 100%; 
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center;
-    object-position: center;
+    object-position: center; */
 }
 
 .novelty__footer {
