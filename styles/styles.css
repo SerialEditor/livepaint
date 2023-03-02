@@ -93,13 +93,6 @@ summary {
 .page {
     font-size: 10px;
     scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.page::-webkit-scrollbar {
-    width: 0;
-    height: 0;
 }
 
 .page-body {

@@ -41,3 +41,9 @@ sliderOpenButton.addEventListener('click', function () {
         settingsList.classList.remove('view-settings__list--showed');
     }, 250);
 });
+
+document.addEventListener('click', function (evt) {
+    if (!evt.target.closest('.view-settings') && settingsList.classList.contains('view-settings__list--showed')) {
+        settingsList.classList.remove('view-settings__list--showed');
+    }
+});
