@@ -37,9 +37,10 @@ function openSlider() {
 
 sliderOpenButton.addEventListener('click', function () {
     openSlider();
-    setTimeout(function () {
-        settingsList.classList.remove('view-settings__list--showed');
-    }, 250);
+    if (slideSources.length > 1) {
+        setButtonAbility(buttonForward, false);
+    }
+    settingsList.classList.remove('view-settings__list--showed');
 });
 
 document.addEventListener('click', function (evt) {

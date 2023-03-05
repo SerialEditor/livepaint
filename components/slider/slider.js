@@ -32,8 +32,8 @@ function closeSlider() {
     if (!buttonBack.hasAttribute('disabled')) {
         setButtonAbility(buttonBack, true);
     }
-    if (buttonForward.hasAttribute('disabled')) {
-        setButtonAbility(buttonForward, false);
+    if (!buttonForward.hasAttribute('disabled')) {
+        setButtonAbility(buttonForward, true);
     }
     if (slideCounter) {
         slideCounter = 0;
