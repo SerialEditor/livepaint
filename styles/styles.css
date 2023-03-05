@@ -91,11 +91,15 @@ summary {
 }
 
 .page {
+    min-height: 100vh;
     font-size: 10px;
     scroll-behavior: smooth;
 }
 
 .page-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     font-family: 'PT Sans', 'Helvetiсa', 'Arial', sans-serif;
     line-height: 1.2;
@@ -205,6 +209,8 @@ summary {
 }
 
 .page-main {
+    flex-grow: 1;
+    width: 100%;
     max-width: 1440px;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -273,7 +279,7 @@ summary {
 
     .navigation__list--wrapper {
         flex-grow: 1;
-        max-width: 1440px;
+        /* max-width: 1440px; */
     }
 
     .navigation__list {
