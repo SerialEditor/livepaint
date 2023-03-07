@@ -232,7 +232,7 @@ summary {
 }
 
 @media screen and (max-width: 767px) {
-    .navigation__list--wrapper {
+    .navigation__list-wrapper {
         position: absolute;
         top: 100%;
         right: 0;
@@ -277,7 +277,7 @@ summary {
         padding-left: 20px;
     }
 
-    .navigation__list--wrapper {
+    .navigation__list-wrapper {
         flex-grow: 1;
         /* max-width: 1440px; */
     }
