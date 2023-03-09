@@ -106,21 +106,21 @@
                 </section>
                 <section class="view-settings">
                     <h3 class="visually-hidden">Режимы просмотра картин галереи</h3>
-                    <ul class="view-settings__list">
-                        <li class="view-settings__item">
+                    <button class="view-settings__button settings-button" type="button" id="settings-button" aria-controls="settings-menu" aria-haspopup="true">
+                        <span class="visually-hidden">Показать настройки</span>
+                    </button>
+                    <ul class="view-settings__list" role="menu" id="settings-menu" aria-labelledby="settings-button">
+                        <li class="view-settings__item" role="menuitem">
                             <button class="view-settings__button set-display-mode layout--set" type="button">
                                 Выстроить колонками
                             </button>
                         </li>
-                        <li class="view-settings__item">
+                        <li class="view-settings__item" role="menuitem">
                             <button class="view-settings__button set-display-mode slider--set" type="button">
                                 Пролистать в слайдере
                             </button>
                         </li>
                     </ul>
-                    <button class="view-settings__button settings-button" type="button">
-                        <span class="visually-hidden">Показать настройки</span>
-                    </button>
                 </section>
             </div>
             <div class="preview__thumbnails-container">
