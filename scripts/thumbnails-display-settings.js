@@ -14,19 +14,20 @@ settingsButton.addEventListener('click', function () {
 });
 
 layoutSetButton.addEventListener('click', function () {
-    previewList.classList.toggle('column--layout');
+        if (!previewList.classList.contains('column--layout')) {
+            layoutSetButton.textContent = 'Выстроить в ряд';
+            previewList.style.transform = `translateX(0)`;
+            setTimeout(function () {
+                previewList.classList.add('column--layout');
+            }, 500);
+            } else {
+            layoutSetButton.textContent = 'Выстроить колонками';
+            previewList.classList.remove('column--layout');
+            setTranslateInitState();
+        }
     setTimeout(function () {
         settingsList.classList.remove('view-settings__list--showed');
     }, 250);
-    setTimeout(function () {
-        if (previewList.classList.contains('column--layout')) {
-            layoutSetButton.textContent = 'Выстроить в ряд';
-            previewList.style.transform = `translateX(0)`;
-        } else {
-            layoutSetButton.textContent = 'Выстроить колонками';
-            setTranslateInitState();
-        }
-    }, 500);
 });
 
 function openSlider() {
@@ -48,3 +49,7 @@ document.addEventListener('click', function (evt) {
         settingsList.classList.remove('view-settings__list--showed');
     }
 });
+
+// previewList.addEventListener('transitionend', function (evt) {
+//     console.log(evt.elapsedTime);
+// });
