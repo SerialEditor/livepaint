@@ -84,8 +84,6 @@
 }
 
 .novelty__footer {
-    position: relative;
-    z-index: 1;
     grid-area: footer;
     align-self: stretch;
     display: -webkit-box;
@@ -260,6 +258,7 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, 160px);
+    grid-auto-flow: column;
     -webkit-box-align: center;
     align-items: center;
     min-height: 256px;
@@ -269,13 +268,13 @@
 
 .column--layout {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-auto-flow: initial;
     padding: 10px;
     cursor: auto;
 }
 
 .preview__thumbnails-item {
     position: relative;
-    grid-row: 1 / 2;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
@@ -288,7 +287,6 @@
 }
 
 .column--layout .preview__thumbnails-item {
-    grid-row: auto;
     justify-self: center;
     padding: 10px;
 }
