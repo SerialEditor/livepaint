@@ -1,0 +1,22 @@
+{
+  "name": "livepaint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "serve": "webpack serve --open --mode development"
+  },
+  "keywords": [],
+  "author": "Pavel Pozdnyakov",
+  "license": "ISC",
+  "browserslist": [
+    "> 2%",
+    "last 2 versions",
+    "not ie > 0",
+    "not ie_mob > 0",
+    "not op_mini all",
+    "not dead"
+  ]
+}
