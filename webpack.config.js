@@ -18,17 +18,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "source", "pages", "index.html"),
       chunks: ["index"],
-      filename: path.join(__dirname, "dist", "index.[contenthash:8].html"),
+      filename: path.join(__dirname, "dist", "index.html"),
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "source", "pages", "gallery", "index.html"),
       chunks: ["gallery"],
-      filename: path.join(__dirname, "dist", "gallery", "index.[contenthash:8].html"),
+      filename: path.join(__dirname, "dist", "gallery", "index.html"),
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "source", "pages", "articles", "index.html"),
       chunks: ["articles"],
-      filename: path.join(__dirname, "dist", "articles", "index.[contenthash:8].html"),
+      filename: path.join(__dirname, "dist", "articles", "index.html"),
     }),
     new FileManagerPlugin({
         events: {
