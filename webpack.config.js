@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "[name].[contenthash:8].js",
-    // assetModuleFilename: path.join("assets", "img", "[name][ext]"),
+    assetModuleFilename: path.join("assets", "img", "[name][ext]"),
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -45,10 +45,10 @@ module.exports = {
         test: /\.html$/i,
         loader: "html-loader",
       },
-      // {
-      //   test: /\.(png|jpg|jpeg|gif)$/i,
-      //   type: "asset/resource",
-      // },
+      {
+        test: /\.(png|jpg|jpeg|webp)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   devServer: {
