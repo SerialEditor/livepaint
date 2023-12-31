@@ -18,5 +18,8 @@
     "not ie_mob > 0",
     "not op_mini all",
     "not dead"
-  ]
+  ],
+  "volta": {
+    "node": "20.10.0"
+  }
 }
