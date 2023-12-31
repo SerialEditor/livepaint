@@ -5,9 +5,9 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 
 module.exports = {
   entry: {
-    index: path.join(__dirname, "source", "index.js"),
-    gallery: path.join(__dirname, "source", "gallery", "index.js"),
-    articles: path.join(__dirname, "source", "articles", "index.js"),
+    index: path.join(__dirname, "source", "pages", "index.js"),
+    gallery: path.join(__dirname, "source", "pages", "gallery", "index.js"),
+    articles: path.join(__dirname, "source", "pages", "articles", "index.js"),
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -16,19 +16,19 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "source", "index.html"),
+      template: path.join(__dirname, "source", "pages", "index.html"),
       chunks: ["index"],
-      filename: path.join(__dirname, "dist", "index.html"),
+      filename: path.join(__dirname, "dist", "index.[contenthash:8].html"),
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "source", "gallery", "index.html"),
+      template: path.join(__dirname, "source", "pages", "gallery", "index.html"),
       chunks: ["gallery"],
-      filename: path.join(__dirname, "dist", "gallery", "index.html"),
+      filename: path.join(__dirname, "dist", "gallery", "index.[contenthash:8].html"),
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "source", "articles", "index.html"),
+      template: path.join(__dirname, "source", "pages", "articles", "index.html"),
       chunks: ["articles"],
-      filename: path.join(__dirname, "dist", "articles", "index.html"),
+      filename: path.join(__dirname, "dist", "articles", "index.[contenthash:8].html"),
     }),
     new FileManagerPlugin({
         events: {
