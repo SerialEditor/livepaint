@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "npm run lint && webpack --mode production",
     "dev": "webpack --mode development",
     "serve": "webpack serve --open --mode development",
     "lint": "eslint --ext .js source/"
