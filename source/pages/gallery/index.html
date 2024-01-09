@@ -7,12 +7,13 @@
     <title>livepaint: галерея картин Насти Поздняковой</title>
 </head>
 <body class="page">
-    <header class="page__header page-header">
+    <header class="page__header page-header container">
         <a class="page-header__logo logo-container" href="../" aria-label="Перейти на главную страницу.">
             <img src="../../images/common/logo.png" width="200" height="72" alt="livepaint - живое творчество.">
         </a>
-        <button class="page-header__nav-toggle button button-toggle" type="button">
+        <button class="page-header__nav-toggle menu-toggle" type="button" aria-expanded="false">
             <span class="visually-hidden">Открыть навигацию по сайту.</span>
+            <span class="menu-toggle__status-indicator"></span>
         </button>
         <nav class="page-header__nav main-nav">
             <ul class="main-nav__list site-navigation">
@@ -28,95 +29,81 @@
             </ul>
         </nav>
     </header>
-    <main class="page__main">
-        <h1 class="page__heading page-heading">Галерея моих картин</h1>
+    <main class="page__main container">
+        <h1 class="page__heading page-heading">Моя галерея</h1>
         <section class="novelties">
             <h2 class="novelties__title section-title">Новые картины</h2>
-            <ul class="novelties__list catalog">
-                <li class="catalog__item painting">
-                    <div class="painting__content">
-                        <h3 class="painting__title">Хлеб наш насущный</h3>
-                        <footer class="painting__footer" role="contentinfo">
-                            <p>Натюрморты, гуашь</p>
-                            <time datetime="2023-03-02">2 марта 2023</time>
-                        </footer>
-                    </div>
-                    <img class="painting__image" src="./files/slides/Хлеб_наш_насущный.jpg" width="500" alt="Хлеб, рыба и глиняный сосуд на куске тканой материи.">
-                </li>
-                <li class="novelty">
-                    <div class="painting__content">
-                        <h3 class="painting__title">Тайна</h3>
-                        <footer class="painting__footer" role="contentinfo">
-                            <p>Композиции, гуашь</p>
-                            <time datetime="2023-01-22">22 января 2023</time>
-                        </footer>
-                    </div>
-                    <img class="painting__image" src="./files/slides/Тайна.jpg" width="500" alt="Горящая   во тьме свеча, вознесенная над витой лестницей.">
-                </li>
-            </ul>
+            <article class="novelties__inject painting">
+                <div class="painting__content">
+                    <h3 class="painting__title">Хлеб наш насущный</h3>
+                    <footer class="painting__footer" role="contentinfo">
+                        <p>Натюрморты, гуашь</p>
+                        <time datetime="2023-12-02">2 декабря 2023</time>
+                    </footer>
+                </div>
+                <img class="painting__image" src="./files/slides/Хлеб_наш_насущный.jpg" width="500" alt="Хлеб, рыба и глиняный сосуд на куске тканой материи.">
+            </article>
+            <article class="novelties__inject painting">
+                <div class="painting__content">
+                    <h3 class="painting__title">Тайна</h3>
+                    <footer class="painting__footer" role="contentinfo">
+                        <p>Композиции, гуашь</p>
+                        <time datetime="2024-01-22">22 января 2024</time>
+                    </footer>
+                </div>
+                <img class="painting__image" src="./files/slides/Тайна.jpg" width="500" alt="Горящая   во тьме свеча, вознесенная над витой лестницей.">
+            </article>
         </section>
         <section class="preview">
-            <h2 class="preview__title">Все картины</h2>
-            <div class="preview__toolbar-container">
-              <section class="filter">
-                <h3 class="visually-hidden">Фильтр по категориям</h3>
-                <details class="filter-categories" tabindex="0">
-                  <summary class="filter-categories__summary">Все картины</summary>
-                  <ul class="filter-categories__list" role="menu">
-                    <li class="filter-categories__item" role="menuitem">
+            <h2 class="preview__title section-title">Все картины</h2>
+              <section class="preview__filter filter">
+                <h3 class="visually-hidden">Выбор жанра к просмотру.</h3>
+                  <div class="filter__options filter-options" role="menu">
                       <button
-                        class="filter-categories__button current--category"
+                        class="filter-options__switch option-switch option-switch--switched-on"
                         type="button"
+                        role="menuitem"
                         data-category="all"
                       >
                         Все картины
                       </button>
-                    </li>
-                    <li class="filter-categories__item" role="menuitem">
                       <button
-                        class="filter-categories__button"
+                        class="filter-options__switch option-switch"
                         type="button"
+                        role="menuitem"
                         data-category="landscape"
                       >
                         Пейзажи
                       </button>
-                    </li>
-                    <li class="filter-categories__item" role="menuitem">
                       <button
-                        class="filter-categories__button"
+                        class="filter-options__switch option-switch"
                         type="button"
+                        role="menuitem"
                         data-category="still-life"
                       >
                         Натюрморты
                       </button>
-                    </li>
-                    <li class="filter-categories__item" role="menuitem">
                       <button
-                        class="filter-categories__button"
+                        class="filter-options__switch option-switch"
                         type="button"
+                        role="menuitem"
                         data-category="portrait"
                       >
                         Портреты
                       </button>
-                    </li>
-                    <li class="filter-categories__item" role="menuitem">
                       <button
-                        class="filter-categories__button"
+                        class="filter-options__switch option-switch"
                         type="button"
                         data-category="composition"
                       >
                         Композиции
                       </button>
-                    </li>
-                  </ul>
-                </details>
+                  </div>
               </section>
               <button class="open-slider" type="button" popovertarget="slider" popovertargetaction="show">
+                <span class="visually-hidden">Открыть слайдер.</span>
                 <span aria-hidden="true">SlideViewier</span>
-                <span class="visually-hidden">Просмотреть картины в слайдере</span>
               </button>
-            </div>
-            <div class="preview__thumbnails-container">
               <ul class="preview__thumbnails-list">
                 <li class="preview__thumbnails-item" data-category="landscape">
                   <h3 class="visually-hidden">Долина цветов</h3>
@@ -366,7 +353,6 @@
                   </a>
                 </li>
               </ul>
-            </div>
           </section>
           <div class="slider" id="slider" popover="manual">
             <div class="slider__viewier-container">
@@ -374,16 +360,17 @@
                 <img
                   class="slider__image"
                   width="500"
+                  alt=""
                 />
                 <button class="slider__close-button" type="button" popovertarget="slider" popovertargetaction="hide">
-                  <span class="visually-hidden">Закрыть слайдер</span>
+                  <span class="visually-hidden">Закрыть слайдер.</span>
                 </button>
                 <div class="slider__navigation">
                   <button class="slider__button button--back" type="button">
-                    <span class="visually-hidden">Предыдущий слайд</span>
+                    <span class="visually-hidden">Предыдущий слайд.</span>
                   </button>
                   <button class="slider__button button--forward" type="button">
-                    <span class="visually-hidden">Следующий слайд</span>
+                    <span class="visually-hidden">Следующий слайд.</span>
                   </button>
                 </div>
                 <figcaption class="slider__slide-title"></figcaption>
