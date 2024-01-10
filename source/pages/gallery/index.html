@@ -1,387 +1,413 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>livepaint: галерея картин Насти Поздняковой</title>
-</head>
-<body class="page">
+  </head>
+  <body class="page">
     <header class="page__header page-header container">
-        <a class="page-header__logo logo-container" href="../" aria-label="Перейти на главную страницу.">
-            <img src="../../images/common/logo.png" width="200" height="72" alt="livepaint - живое творчество.">
-        </a>
-        <button class="page-header__nav-toggle menu-toggle" type="button" aria-expanded="false">
-            <span class="visually-hidden">Открыть навигацию по сайту.</span>
-            <span class="menu-toggle__status-indicator"></span>
-        </button>
-        <nav class="page-header__nav main-nav">
-            <ul class="main-nav__list site-navigation">
-                <li class="site-navigation__item">
-                   <a class="site-navigation__link" href="../">Обо мне</a>
-                </li>
-                <li class="site-navigation__item">
-                    <a class="site-navigation__link" href="./" aria-current="page">Галерея</a>
-                </li>
-                <li class="site-navigation__item">
-                    <a class="site-navigation__link" href="../articles/">Блог</a>
-                </li>
-            </ul>
-        </nav>
+      <a
+        class="page-header__logo logo-container"
+        href="../"
+        aria-label="Перейти на главную страницу."
+      >
+        <img
+          src="../../images/common/logo.png"
+          width="200"
+          height="72"
+          alt="livepaint - живое творчество."
+        />
+      </a>
+      <button
+        class="page-header__nav-toggle menu-toggle"
+        type="button"
+        aria-expanded="false"
+      >
+        <span class="visually-hidden">Открыть навигацию по сайту.</span>
+        <span class="menu-toggle__status-indicator"></span>
+      </button>
+      <nav class="page-header__nav main-nav">
+        <ul class="main-nav__list site-navigation">
+          <li class="site-navigation__item">
+            <a class="site-navigation__link" href="../">Обо мне</a>
+          </li>
+          <li class="site-navigation__item">
+            <a class="site-navigation__link" href="./" aria-current="page"
+              >Галерея</a
+            >
+          </li>
+          <li class="site-navigation__item">
+            <a class="site-navigation__link" href="../articles/">Блог</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main class="page__main container">
-        <h1 class="page__heading page-heading">Моя галерея</h1>
-        <section class="novelties">
-            <h2 class="novelties__title section-title">Новые картины</h2>
-            <article class="novelties__inject painting">
-                <div class="painting__content">
-                    <h3 class="painting__title">Хлеб наш насущный</h3>
-                    <footer class="painting__footer" role="contentinfo">
-                        <p>Натюрморты, гуашь</p>
-                        <time datetime="2023-12-02">2 декабря 2023</time>
-                    </footer>
-                </div>
-                <img class="painting__image" src="./files/slides/Хлеб_наш_насущный.jpg" width="500" alt="Хлеб, рыба и глиняный сосуд на куске тканой материи.">
-            </article>
-            <article class="novelties__inject painting">
-                <div class="painting__content">
-                    <h3 class="painting__title">Тайна</h3>
-                    <footer class="painting__footer" role="contentinfo">
-                        <p>Композиции, гуашь</p>
-                        <time datetime="2024-01-22">22 января 2024</time>
-                    </footer>
-                </div>
-                <img class="painting__image" src="./files/slides/Тайна.jpg" width="500" alt="Горящая   во тьме свеча, вознесенная над витой лестницей.">
-            </article>
-        </section>
-        <section class="preview">
-            <h2 class="preview__title section-title">Все картины</h2>
-              <section class="preview__filter filter">
-                <h3 class="visually-hidden">Выбор жанра к просмотру.</h3>
-                  <div class="filter__options filter-options" role="menu">
-                      <button
-                        class="filter-options__switch option-switch option-switch--switched-on"
-                        type="button"
-                        role="menuitem"
-                        data-category="all"
-                      >
-                        Все картины
-                      </button>
-                      <button
-                        class="filter-options__switch option-switch"
-                        type="button"
-                        role="menuitem"
-                        data-category="landscape"
-                      >
-                        Пейзажи
-                      </button>
-                      <button
-                        class="filter-options__switch option-switch"
-                        type="button"
-                        role="menuitem"
-                        data-category="still-life"
-                      >
-                        Натюрморты
-                      </button>
-                      <button
-                        class="filter-options__switch option-switch"
-                        type="button"
-                        role="menuitem"
-                        data-category="portrait"
-                      >
-                        Портреты
-                      </button>
-                      <button
-                        class="filter-options__switch option-switch"
-                        type="button"
-                        data-category="composition"
-                      >
-                        Композиции
-                      </button>
-                  </div>
-              </section>
-              <button class="open-slider" type="button" popovertarget="slider" popovertargetaction="show">
-                <span class="visually-hidden">Открыть слайдер.</span>
-                <span aria-hidden="true">SlideViewier</span>
+      <h1 class="page__heading page-heading">Моя галерея</h1>
+      <section class="novelties">
+        <h2 class="novelties__title section-title">Новые картины</h2>
+        <article class="novelties__inject painting">
+          <div class="painting__content">
+            <h3 class="painting__title">Хлеб наш насущный</h3>
+            <footer class="painting__footer">
+              <p>Натюрморты, гуашь</p>
+              <time datetime="2023-12-02">2 декабря 2023</time>
+            </footer>
+          </div>
+          <img
+            class="painting__image"
+            src="./files/slides/Хлеб_наш_насущный.jpg"
+            width="500"
+            alt="Хлеб, рыба и глиняный сосуд на куске тканой материи."
+          />
+        </article>
+        <article class="novelties__inject painting">
+          <div class="painting__content">
+            <h3 class="painting__title">Тайна</h3>
+            <footer class="painting__footer">
+              <p>Композиции, гуашь</p>
+              <time datetime="2024-01-22">22 января 2024</time>
+            </footer>
+          </div>
+          <img
+            class="painting__image"
+            src="./files/slides/Тайна.jpg"
+            width="500"
+            alt="Горящая во тьме свеча, вознесенная над витой лестницей."
+          />
+        </article>
+      </section>
+      <section class="preview">
+        <h2 class="preview__title section-title">Все картины</h2>
+        <section class="preview__filter filter">
+          <h3 class="visually-hidden">Выбор демонстрируемого жанра.</h3>
+          <details class="filter__dropdown dropdown">
+            <summary class="dropdown__caption">
+              <span class="visually-hidden"
+                >Открыть меню выбора жанра. Выбрано:</span
+              ><data class="dropdown__control-data" value="all">Все жанры</data>
+            </summary>
+            <div class="dropdown__list filter-options" role="menu">
+              <button
+                class="filter-options__switch option-switch option-switch--switched-on"
+                type="button"
+                role="menuitem"
+                data-category="all"
+              >
+                Все жанры
               </button>
-              <ul class="preview__thumbnails-list">
-                <li class="preview__thumbnails-item" data-category="landscape">
-                  <h3 class="visually-hidden">Долина цветов</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Долина_цветов.jpg"
-                    width="120"
-                    height="160"
-                    alt="Луг, усыпанный пышными бело-розовыми цветами, в лучах первой зари"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Долина_цветов.jpg"
-                    data-file-title="Долина цветов"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="portrait">
-                  <h3 class="visually-hidden">Мысли о лучшем</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Мысли_о_лучшем.jpg"
-                    width="120"
-                    height="160"
-                    alt="Мужчина с густой бородой и шевелюрой, мечтательно вознесший глаза к небу"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Мысли_о_лучшем.jpg"
-                    data-file-title="Мысли о лучшем"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="landscape">
-                  <h3 class="visually-hidden">Найденный покой</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Найденный_покой.jpg"
-                    width="120"
-                    height="85"
-                    alt="Небольшой дом на берегу озера; по озеру идет одномачтовый парусник; день клонится к закату, и солнце посылает прощальные лучи сквозь проблески в темных облаках"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Найденный_покой.jpg"
-                    data-file-title="Найденный покой"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="portrait">
-                  <h3 class="visually-hidden">Незнакомка</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Незнакомка.jpg"
-                    width="120"
-                    height="160"
-                    alt="Случайно встреченная на улице девушка с окрашенными в ярко-зеленый цвет волосами и слегка вызывающим взглядом"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Незнакомка.jpg"
-                    data-file-title="Незнакомка"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="composition">
-                  <h3 class="visually-hidden">Тайна</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Тайна.jpg"
-                    width="120"
-                    height="128"
-                    alt="Горящая во тьме свеча, вознесенная над витой лестницей"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Тайна.jpg"
-                    data-file-title="Тайна"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="still-life">
-                  <h3 class="visually-hidden">Обжигающий кофе</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Обжигающий_кофе.jpg"
-                    width="120"
-                    height="86"
-                    alt="Натюрморт: глиняный кофейник, перец-чили и луковица"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Обжигающий_кофе.jpg"
-                    data-file-title="Обжигающий кофе"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="portrait">
-                  <h3 class="visually-hidden">Портрет карандашом</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Портрет_карандашом.jpg"
-                    width="120"
-                    height="172"
-                    alt="Портрет женщины карандашом"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Портрет_карандашом.jpg"
-                    data-file-title="Портрет карандашом"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="still-life">
-                  <h3 class="visually-hidden">Урожай</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Урожай.jpg"
-                    width="120"
-                    height="172"
-                    alt="Натюрморт: зрелые пшеничные колосья в высоком кувшине; маленький кувшин, покрытый белой тканью, полон муки из пшеницы этого же урожая"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Урожай.jpg"
-                    data-file-title="Урожай"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="still-life">
-                  <h3 class="visually-hidden">Фарфор</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Фарфор.jpg"
-                    width="120"
-                    height="169"
-                    alt="Белая фарфоровая ваза, украшенная изображением букета бирюзово-синих цветов"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Фарфор.jpg"
-                    data-file-title="Фарфор"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="landscape">
-                  <h3 class="visually-hidden">На заре</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/На_заре.jpg"
-                    width="120"
-                    height="85"
-                    alt="Яркий восход, озаряющий лесную опушку"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/На_заре.jpg"
-                    data-file-title="На заре"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="still-life">
-                  <h3 class="visually-hidden">Бидон</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Бидон.jpg"
-                    width="120"
-                    height="150"
-                    alt="Эмалированный бидон и плод красного болгарского перца"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Бидон.jpg"
-                    data-file-title="Бидон"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="still-life">
-                  <h3 class="visually-hidden">Солнечный кувшин</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Солнечный_кувшин.jpg"
-                    width="120"
-                    height="160"
-                    alt="Глиняный кувшин под солнечным светом"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Солнечный_кувшин.jpg"
-                    data-file-title="Солнечный кувшин"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-                <li class="preview__thumbnails-item" data-category="still-life">
-                  <h3 class="visually-hidden">Хлеб наш насущный</h3>
-                  <img
-                    class="preview__thumbnail"
-                    src="./files/previews/Хлеб_наш_насущный.jpg"
-                    width="120"
-                    height="160"
-                    alt="Хлеб, рыба и глиняный сосуд на куске тканой материи"
-                  />
-                  <a
-                    class="magnifying-button"
-                    href="./files/slides/Хлеб_наш_насущный.jpg"
-                    data-file-title="Хлеб наш насущный"
-                  >
-                    <span class="visually-hidden"
-                      >Показать увеличенное изображение</span
-                    >
-                  </a>
-                </li>
-              </ul>
-          </section>
-          <div class="slider" id="slider" popover="manual">
-            <div class="slider__viewier-container">
-              <figure class="slider__viewier-window download--waiting">
-                <img
-                  class="slider__image"
-                  width="500"
-                  alt=""
-                />
-                <button class="slider__close-button" type="button" popovertarget="slider" popovertargetaction="hide">
-                  <span class="visually-hidden">Закрыть слайдер.</span>
-                </button>
-                <div class="slider__navigation">
-                  <button class="slider__button button--back" type="button">
-                    <span class="visually-hidden">Предыдущий слайд.</span>
-                  </button>
-                  <button class="slider__button button--forward" type="button">
-                    <span class="visually-hidden">Следующий слайд.</span>
-                  </button>
-                </div>
-                <figcaption class="slider__slide-title"></figcaption>
-              </figure>
+              <button
+                class="filter-options__switch option-switch"
+                type="button"
+                role="menuitem"
+                data-category="landscape"
+              >
+                Пейзажи
+              </button>
+              <button
+                class="filter-options__switch option-switch"
+                type="button"
+                role="menuitem"
+                data-category="still-life"
+              >
+                Натюрморты
+              </button>
+              <button
+                class="filter-options__switch option-switch"
+                type="button"
+                role="menuitem"
+                data-category="portrait"
+              >
+                Портреты
+              </button>
+              <button
+                class="filter-options__switch option-switch"
+                type="button"
+                role="menuitem"
+                data-category="allegory"
+              >
+                Аллегории
+              </button>
+            </div>
+          </details>
+        </section>
+        <button
+          class="preview__slider-open"
+          type="button"
+          popovertarget="slider"
+          popovertargetaction="show"
+        >
+          <span class="visually-hidden">Открыть слайдер.</span>
+          <span aria-hidden="true">SlideViewier</span>
+        </button>
+        <ul class="preview__gallery gallery">
+          <li class="gallery__item slot" data-category="landscape">
+            <h3 class="visually-hidden">Долина цветов.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Долина_цветов.jpg"
+              width="120"
+              height="160"
+              alt="Луг, усыпанный пышными бело-розовыми цветами, в лучах первой зари."
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Долина_цветов.jpg"
+              data-file-title="Долина цветов"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="landscape">
+            <h3 class="visually-hidden">Найденный покой.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Найденный_покой.jpg"
+              width="120"
+              height="85"
+              alt="Небольшой дом на берегу озера; по озеру идет одномачтовый парусник; день клонится к закату, и солнце посылает прощальные лучи сквозь проблески в темных облаках."
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Найденный_покой.jpg"
+              data-file-title="Найденный покой"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="portrait">
+            <h3 class="visually-hidden">Незнакомка.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Незнакомка.jpg"
+              width="120"
+              height="160"
+              alt="Случайно встреченная на улице девушка с окрашенными в ярко-зеленый цвет волосами и слегка вызывающим взглядом."
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Незнакомка.jpg"
+              data-file-title="Незнакомка"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="allegory">
+            <h3 class="visually-hidden">Тайна.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Тайна.jpg"
+              width="120"
+              height="128"
+              alt="Горящая во тьме свеча, вознесенная над витой лестницей"
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Тайна.jpg"
+              data-file-title="Тайна"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="still-life">
+            <h3 class="visually-hidden">Обжигающий кофе.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Обжигающий_кофе.jpg"
+              width="120"
+              height="86"
+              alt="Натюрморт: глиняный кофейник, перец-чили и луковица"
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Обжигающий_кофе.jpg"
+              data-file-title="Обжигающий кофе"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="portrait">
+            <h3 class="visually-hidden">Портрет карандашом.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Портрет_карандашом.jpg"
+              width="120"
+              height="172"
+              alt="Портрет женщины карандашом"
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Портрет_карандашом.jpg"
+              data-file-title="Портрет карандашом"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="still-life">
+            <h3 class="visually-hidden">Урожай.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Урожай.jpg"
+              width="120"
+              height="172"
+              alt="Натюрморт: зрелые пшеничные колосья в высоком кувшине; маленький кувшин, покрытый белой тканью, полон муки из пшеницы этого же урожая."
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Урожай.jpg"
+              data-file-title="Урожай"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="still-life">
+            <h3 class="visually-hidden">Фарфор.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Фарфор.jpg"
+              width="120"
+              height="169"
+              alt="Белая фарфоровая ваза, украшенная изображением букета бирюзово-синих цветов."
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Фарфор.jpg"
+              data-file-title="Фарфор"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="landscape">
+            <h3 class="visually-hidden">На заре.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/На_заре.jpg"
+              width="120"
+              height="85"
+              alt="Яркий восход, озаряющий лесную опушку."
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/На_заре.jpg"
+              data-file-title="На заре"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="still-life">
+            <h3 class="visually-hidden">Бидон.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Бидон.jpg"
+              width="120"
+              height="150"
+              alt="Эмалированный бидон и плод красного болгарского перца."
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Бидон.jpg"
+              data-file-title="Бидон"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="still-life">
+            <h3 class="visually-hidden">Солнечный кувшин.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Солнечный_кувшин.jpg"
+              width="120"
+              height="160"
+              alt="Глиняный кувшин под солнечным светом."
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Солнечный_кувшин.jpg"
+              data-file-title="Солнечный кувшин"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+          <li class="gallery__item slot" data-category="still-life">
+            <h3 class="visually-hidden">Хлеб наш насущный.</h3>
+            <img
+              class="slot__image"
+              src="./files/previews/Хлеб_наш_насущный.jpg"
+              width="120"
+              height="160"
+              alt="Хлеб, рыба и глиняный сосуд на куске тканой материи"
+            />
+            <a
+              class="slot__enlargement"
+              href="./files/slides/Хлеб_наш_насущный.jpg"
+              data-file-title="Хлеб наш насущный"
+            >
+              <span class="visually-hidden"
+                >Показать увеличенное изображение.</span
+              >
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="slider" id="slider" popover="manual">
+        <h2 class="visually-hidden">Слайдер.</h2>
+        <div class="slider__container">
+          <div class="slider__frame slider-frame slider-frame--download-waiting">
+            <button
+              class="slider__close button-close"
+              type="button"
+              popovertarget="slider"
+              popovertargetaction="hide"
+            >
+              <span class="visually-hidden">Закрыть слайдер.</span>
+            </button>
+            <img class="slider__image" src="#" width="500" alt="" />
+            <p class="slider__slide-name"></p>
+            <div class="slider__navigation slider-navigation" role="toolbar" aria-label="Панель переключения слайдов.">
+              <button class="slider-navigation__button slider-nav-button slider-nav-button--prev" type="button">
+                <span class="visually-hidden">Предыдущий слайд.</span>
+              </button>
+              <button class="slider-navigation__button slider-nav-button slider-nav-button--next" type="button">
+                <span class="visually-hidden">Следующий слайд.</span>
+              </button>
             </div>
           </div>
+        </div>
+      </section>
     </main>
     <footer class="page__footer page-footer">
-        <p class="page-footer__logo logo-container">
-            <img src="../../images/common/footer-logo.png" width="200" height="72" alt="livepaint - живое творчество.">
-        </p>
+      <p class="page-footer__logo logo-container">
+        <img
+          src="../../images/common/footer-logo.png"
+          width="200"
+          height="72"
+          alt="livepaint - живое творчество."
+        />
+      </p>
     </footer>
-</body>
+  </body>
 </html>
