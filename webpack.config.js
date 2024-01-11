@@ -44,6 +44,22 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: "html-loader",
+        options: {
+          sources: {
+            list: [
+              "...",
+              {
+                tag: "a",
+                attribute: "href",
+                type: "src",
+                filter: (tag, attribute, attributes) => {
+                  const entry = attributes.find(attr => attr.name === attribute);
+                  return entry.value.includes("_slide.jpg");
+                },
+              },
+            ],
+          },
+        },
       },
       {
         test: /\.(png|jpg|jpeg|webp)$/i,
