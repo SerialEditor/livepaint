@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FileManagerPlugin = require("filemanager-webpack-plugin");
 const path = require("path");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -30,6 +31,11 @@ module.exports = {
       chunks: ["articles"],
       filename: path.join(__dirname, "dist", "articles", "index.html"),
     }),
+    new MiniCssExtractPlugin(
+      {
+        filename: '[name].[contenthash].css',
+      },
+    ),
     new FileManagerPlugin({
         events: {
             onStart: {
@@ -60,6 +66,15 @@ module.exports = {
             ],
           },
         },
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|webp)$/i,
