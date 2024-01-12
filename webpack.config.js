@@ -32,7 +32,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(
       {
-        filename: '[name].[contenthash].css',
+        filename: '[name].[contenthash:8].css',
       },
     ),
     new FileManagerPlugin({
