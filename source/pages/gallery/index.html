@@ -8,7 +8,7 @@
     <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
   </head>
-  <body class="page">
+  <body class="page sticky-footer">
     <header class="page__header page-header container">
       <a
         class="page-header__logo logo-container"
@@ -46,7 +46,7 @@
         </ul>
       </nav>
     </header>
-    <main class="page__main container">
+    <main class="page__main sticky-footer__stretchy container">
       <h1 class="page__heading page-heading">Моя галерея</h1>
       <section class="novelties">
         <h2 class="novelties__title section-title">Новые картины</h2>
@@ -402,14 +402,16 @@
       </section>
     </main>
     <footer class="page__footer page-footer">
-      <p class="page-footer__logo logo-container">
-        <img
-          src="../../images/common/footer-logo.svg"
-          width="100"
-          height="37"
-          alt="livepaint - живое творчество."
-        />
-      </p>
+      <div class="container">
+        <p class="page-footer__logo logo-container">
+          <img
+            src="../../images/common/footer-logo.svg"
+            width="100"
+            height="37"
+            alt="livepaint - живое творчество."
+          />
+        </p>
+      </div>
     </footer>
   </body>
 </html>
