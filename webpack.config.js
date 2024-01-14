@@ -58,7 +58,7 @@ module.exports = {
                 type: 'src',
                 filter: (tag, attribute, attributes) => {
                   const entry = attributes.find(attr => attr.name === attribute);
-                  return entry.value.includes('_slide.jpg');
+                  return entry.value.includes('.jpg');
                 },
               },
             ],
@@ -82,7 +82,7 @@ module.exports = {
         test: /\.svg$/,
         type: 'asset/resource',
         generator: {
-          filename: path.join('icons', '[name][ext]'),
+          filename: path.join('assets', 'icons', '[name][ext]'),
         },
       },
       {
